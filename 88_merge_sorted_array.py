@@ -30,3 +30,18 @@ nums2 = [1], n = 1
 Output:
 nums1 = [1]
 '''
+
+class Solution:
+    def merge(self, nums1: List[int], n: int, nums2: List[int], m: int) -> None:
+        index_nums1 = n - 1
+        index_nums2 = m - 1
+        merge_position = n + m - 1
+
+        while index_nums2 >= 0:
+            if index_nums1 >= 0 and nums1[index_nums1] > nums2[index_nums2]:
+                nums1[merge_position] = nums1[index_nums1]
+                index_nums1 -= 1
+            else:
+                nums1[merge_position] = nums2[index_nums2]
+                index_nums2 -= 1
+            merge_position -= 1

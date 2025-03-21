@@ -3,7 +3,6 @@ You are given two strings: ransomNote and magazine. Return true if the ransomNot
 Each letter in magazine can only be used once in ransomNote.
 
 Examples:
-
 Input: ransomNote = "a", magazine = "b"
 Output: false
 

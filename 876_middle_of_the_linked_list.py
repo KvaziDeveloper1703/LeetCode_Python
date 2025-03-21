@@ -4,7 +4,6 @@ If the list has an even number of nodes, return the second of the two middle nod
 Return the middle node along with all the nodes that follow it.
 
 Examples:
-
 Input: head = [1, 2, 3, 4, 5]
 Output: [3, 4, 5]
 

@@ -8,7 +8,6 @@ answer[i] == i (as a string) if none of the above conditions are met.
 Return the array for all integers from 1 to n.
 
 Examples:
-
 Input: n = 3
 Output: ["1", "2", "Fizz"]
 

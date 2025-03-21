@@ -1,17 +1,19 @@
 """
-Given an integer num, return the number of steps to reduce it to zero.
+Given an integer num, return the number of steps required to reduce it to zero.
 
-In one step, if the current number is even, you have to divide it by 2, otherwise, you have to subtract 1 from it.
+You must follow these rules:
++ If the current number is even, divide it by 2.
++ If the current number is odd, subtract 1 from it.
 
-Example 1:
+Repeat the process until the number becomes 0, and return the total number of steps taken.
+
+Examples:
 Input: num = 14
 Output: 6
 
-Example 2:
 Input: num = 8
 Output: 4
 
-Example 3:
 Input: num = 123
 Output: 12
 """

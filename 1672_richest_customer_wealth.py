@@ -1,21 +1,26 @@
 """
-You are given an m x n integer grid accounts where accounts[i][j] is the amount of money the i​​​​​​​​​​​th​​​​ customer has in the j​​​​​​​​​​​th​​​​ bank. Return the wealth that the richest customer has.
+You are given a 2D integer array accounts where accounts[i][j] represents the amount of money the i‑th customer has in the j‑th bank.
+A customer's wealth is the sum of money they have in all their bank accounts.
+Return the maximum wealth among all customers.
 
-A customer's wealth is the amount of money they have in all their bank accounts. The richest customer is the customer that has the maximum wealth.
-
-Example 1:
-Input: accounts = [[1,2,3],[3,2,1]]
+Examples:
+Input: accounts = [[1, 2, 3], [3, 2, 1]]
 Output: 6
 
-Example 2:
-Input: accounts = [[1,5],[7,3],[3,5]]
+Input: accounts = [[1, 5], [7, 3], [3, 5]]
 Output: 10
 
-Example 3:
-Input: accounts = [[2,8,7],[7,1,3],[1,9,5]]
+Input: accounts = [[2, 8, 7], [7, 1, 3], [1, 9, 5]]
 Output: 17
 """
 
 class Solution(object):
     def maximumWealth(self, accounts):
-        return max(sum(customer) for customer in accounts)
+        max_wealth = 0
+        for customer in accounts:
+            current_wealth = sum(customer)
+
+            if current_wealth > max_wealth:
+                max_wealth = current_wealth
+
+        return max_wealth

@@ -1,32 +1,40 @@
 '''
-Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+Given a string S containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 An input string is valid if:
-+ Open brackets must be closed by the same type of brackets.
-+ Open brackets must be closed in the correct order.
++ Open brackets must be closed by the same type of brackets;
++ Open brackets must be closed in the correct order;
 + Every close bracket has a corresponding open bracket of the same type.
 
-Example 1:
+Examples:
 Input: s = "()"
 Output: true
 
-Example 2:
 Input: s = "()[]{}"
 Output: true
+
+Дана строка S, содержащая только символы '(', ')', '{', '}', '[' и ']'. Определите, является ли эта строка правильной.
+Строка считается правильной, если выполняются следующие условия:
++ Открывающие скобки должны закрываться скобками того же типа;
++ Открывающие скобки должны закрываться в правильном порядке;
++ Каждой закрывающей скобке должна соответствовать открывающая скобка того же типа.
+
+Примеры:
+Вход: s = "()"
+Выход: true
+
+Вход: s = "()[]{}"
+Выход: true
 '''
 
-class Solution:
-    def isValid(self, s: str) -> bool:
-        stack = []
+def is_valid(S: str) -> bool:
+    stack = []
+    bracket_map = {')': '(', '}': '{', ']': '['}
+    for character in S:
+        if character in bracket_map:
+            top_element = stack.pop() if stack else '#'
 
-        bracket_map = {')': '(', '}': '{', ']': '['}
-
-        for char in s:
-            if char in bracket_map:
-                top_element = stack.pop() if stack else '#'
-
-                if bracket_map[char] != top_element:
-                    return False
-            else:
-                stack.append(char)
-
-        return not stack
+            if bracket_map[character] != top_element:
+                return False
+        else:
+            stack.append(character)
+    return not stack

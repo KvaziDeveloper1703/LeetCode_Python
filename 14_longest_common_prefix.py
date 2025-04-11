@@ -8,16 +8,27 @@ Output: "fl"
 
 Input: strs = ["dog", "racecar", "car"]
 Output: ""
+
+Напишите функцию, которая находит наибольший общий префикс среди массива строк.
+Если общего префикса нет, верните пустую строку "".
+
+Примеры:
+Вход: strs = ["flower", "flow", "flight"]
+Выход: "fl"
+
+Вход: strs = ["dog", "racecar", "car"]
+Выход: ""
 '''
 
-class Solution:
-    def longestCommonPrefix(self, strs: List[str]) -> str:
-        if not strs:
+from typing import List
+
+def longest_common_prefix(given_strings: List[str]) -> str:
+        if not given_strings:
             return ""
         
-        prefix = strs[0]
+        prefix = given_strings[0]
 
-        for word in strs[1:]:
+        for word in given_strings[1:]:
             while not word.startswith(prefix):
                 prefix = prefix[:-1]
                 if not prefix:

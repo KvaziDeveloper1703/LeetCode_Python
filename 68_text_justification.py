@@ -1,73 +1,63 @@
 '''
-Given an array of words and an integer maxWidth, format the text so that each line has exactly maxWidth characters and is fully justified (aligned on both left and right).
+Given an array of words and an integer max_width, format the text so that each line has exactly max_width characters and is fully justified.
 Use a greedy approach: fill each line with as many words as possible.
 
 Rules:
-+ Add spaces between words to make the line exactly maxWidth characters long.
-+ Distribute spaces as evenly as possible between words.
-+ If extra spaces remain, put more on the left.
++ Add spaces between words to make the line exactly max_width characters long;
++ Distribute spaces as evenly as possible between words;
++ If extra spaces remain, put more on the left;
 + The last line should be left-justified, with words separated by a single space and any extra spaces added at the end.
 
-Examples:
+Example:
 Input: 
   words = ["This", "is", "an", "example", "of", "text", "justification."], 
-  maxWidth = 16
+  max_width = 16
+Output: ["This    is    an",
+         "example  of text",
+         "justification.  "
+      ]
 
-Output:
-[
-  "This    is    an",
-  "example  of text",
-  "justification.  "
-]
+Дан массив слов words и целое число max_width. Необходимо отформатировать текст так, чтобы каждая строка содержала ровно max_width символов и была полностью выровнена по ширине.
+Используйте жадный подход: заполняйте каждую строку максимально возможным количеством слов.
 
-Input: 
-  words = ["What","must","be","acknowledgment","shall","be"], 
-  maxWidth = 16
+Правила форматирования:
++ Между словами нужно вставить пробелы так, чтобы длина строки была ровно max_width символов;
++ Пробелы распределяются как можно равномернее между словами;
++ Если остаются лишние пробелы, они добавляются в начале между левыми словами;
++ Последняя строка должна быть выровнена по левому краю — между словами ставится по одному пробелу, а оставшиеся пробелы добавляются в конец строки.
 
-Output:
-[
-  "What   must   be",
-  "acknowledgment  ",
-  "shall be        "
-]
-
-Input: 
-  words = ["Science","is","what","we","understand","well","enough","to","explain","to","a","computer.","Art","is","everything","else","we","do"], 
-  maxWidth = 20
-
-Output:
-[
-  "Science  is  what we",
-  "understand      well",
-  "enough to explain to",
-  "a  computer.  Art is",
-  "everything  else  we",
-  "do                  "
-]
+Пример:
+Ввод: 
+  words = ["This", "is", "an", "example", "of", "text", "justification."]  
+  max_width = 16
+Вывод: ["This    is    an",  
+        "example  of text",  
+        "justification.  "]
 '''
 
-class Solution:
-    def fullJustify(self, words: List[str], maxWidth: int) -> List[str]:
-        res = []
-        line = []
-        line_len = 0
+from typing import List
 
-        for word in words:
-            if line_len + len(word) + len(line) > maxWidth:
-                spaces = maxWidth - line_len
-                if len(line) == 1:
-                    res.append(line[0] + ' ' * spaces)
-                else:
-                    even_space = spaces // (len(line) - 1)
-                    extra = spaces % (len(line) - 1)
-                    for i in range(extra):
-                        line[i] += ' '
-                    res.append((' ' * even_space).join(line))
-                line = []
-                line_len = 0
+def full_justify(words: List[str], max_width: int) -> List[str]:
+    result = []
+    line = []
+    line_length = 0
 
-            line.append(word)
-            line_len += len(word)
+    for word in words:
+        if line_length + len(word) + len(line) > max_width:
+            spaces = max_width - line_length
+            if len(line) == 1:
+                result.append(line[0] + ' ' * spaces)
+            else:
+                even_space = spaces // (len(line) - 1)
+                extra = spaces % (len(line) - 1)
+                for i in range(extra):
+                    line[i] += ' '
+                result.append((' ' * even_space).join(line))
+            line = []
+            line_len = 0
 
-        res.append(' '.join(line).ljust(maxWidth))
-        return res
+        line.append(word)
+        line_len += len(word)
+
+    result.append(' '.join(line).ljust(max_width))
+    return result

@@ -1,25 +1,38 @@
 '''
-Given an array of strings strs, group the anagrams together. You can return the answer in any order.
+Given an array of strings given_strings, group the anagrams together. You can return the answer in any order.
 
-Example 1:
-Input: strs = ["eat","tea","tan","ate","nat","bat"]
+Examples:
+Input: given_strings = ["eat","tea","tan","ate","nat","bat"]
 Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
 
-Example 2:
-Input: strs = [""]
+Input: given_strings = [""]
 Output: [[""]]
 
-Example 3:
-Input: strs = ["a"]
+Input: given_strings = ["a"]
 Output: [["a"]]
+
+Дан массив строк given_strings. Необходимо сгруппировать анаграммы вместе.
+Порядок групп в результате может быть любым.
+
+Примеры:
+Ввод: given_strings = ["eat", "tea", "tan", "ate", "nat", "bat"]
+Вывод: [["bat"], ["nat", "tan"], ["ate", "eat", "tea"]]
+
+Ввод: given_strings = [""]
+Вывод: [[""]]
+
+Ввод: given_strings = ["a"]
+Вывод: [["a"]]
 '''
 
-class Solution:
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        anagrams = defaultdict(list)
+from typing import List
+from collections import defaultdict
 
-        for word in strs:
-            sorted_word = ''.join(sorted(word))
-            anagrams[sorted_word].append(word)
-        
-        return list(anagrams.values())
+def group_anagrams(given_strings: List[str]) -> List[List[str]]:
+    anagrams = defaultdict(list)
+
+    for word in given_strings:
+        sorted_word = ''.join(sorted(word))
+        anagrams[sorted_word].append(word)
+
+    return list(anagrams.values())

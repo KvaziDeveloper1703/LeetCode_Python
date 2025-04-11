@@ -1,38 +1,49 @@
 '''
-You are given the heads of two sorted linked lists list1 and list2.
+You are given the heads of two sorted linked lists list_1 and list_2.
 Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.
 
 Return the head of the merged linked list.
 
 Examples:
-Input:
-list1 = [1,2,4], list2 = [1,3,4]
-Output:
-[1,1,2,3,4,4]
+Input: list1 = [1,2,4], list2 = [1,3,4]
+Output: [1,1,2,3,4,4]
 
-Input:
-list1 = [], list2 = []
-Output:
-[]
+Input: list1 = [], list2 = []
+Output: []
+
+Даны головы двух отсортированных связанных списков list_1 и list_2.
+Объедините эти два списка в один отсортированный список. Новый список должен быть сформирован путём чередования узлов из первых двух списков.
+
+Верните голову объединённого связанного списка.
+
+Примеры:
+Вход: list1 = [1, 2, 4], list2 = [1, 3, 4]
+Выход: [1, 1, 2, 3, 4, 4]
+
+Вход: list1 = [], list2 = []
+Выход: []
 '''
 
-class Solution:
-    def mergeTwoLists(self, list1: ListNode, list2: ListNode) -> ListNode:
-        dummy = ListNode()
-        current = dummy
+from typing import Optional
 
-        while list1 and list2:
-            if list1.val < list2.val:
-                current.next = list1
-                list1 = list1.next
-            else:
-                current.next = list2
-                list2 = list2.next
-            current = current.next
+class ListNode:
+    def __init__(self, value: int = 0, next: Optional['ListNode'] = None):
+        self.value = value
+        self.next = next
 
-        if list1:
-            current.next = list1
-        elif list2:
-            current.next = list2
+def merge_two_lists(list_1: Optional[ListNode], list_2: Optional[ListNode]) -> Optional[ListNode]:
+    dummy = ListNode()
+    current = dummy
 
-        return dummy.next
+    while list_1 and list_2:
+        if list_1.value < list_2.value:
+            current.next = list_1
+            list_1 = list_1.next
+        else:
+            current.next = list_2
+            list_2 = list_2.next
+        current = current.next
+
+    current.next = list_1 if list_1 else list_2
+
+    return dummy.next

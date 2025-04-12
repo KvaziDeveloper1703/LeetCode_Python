@@ -1,37 +1,45 @@
 '''
-Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
+Given an unsorted array of integers numbers, return the length of the longest consecutive elements sequence.
 You must write an algorithm that runs in O(n) time.
 
-Example 1:
-Input: nums = [100,4,200,1,3,2]
+Examples:
+Input: numbers = [100,4,200,1,3,2]
 Output: 4
 
-Example 2:
-Input: nums = [0,3,7,2,5,8,4,6,0,1]
+Input: numbers = [0,3,7,2,5,8,4,6,0,1]
 Output: 9
 
-Example 3:
-Input: nums = [1,0,1,2]
-Output: 3
+Дан неотсортированный массив целых чисел numbers.
+Необходимо найти длину самой длинной последовательности подряд идущих чисел (в любом порядке, но без пропусков).
+
+Вы должны реализовать алгоритм с временем работы O(n).
+
+Примеры:
+Вход: numbers = [100, 4, 200, 1, 3, 2]
+Выход: 4
+
+Вход: numbers = [0, 3, 7, 2, 5, 8, 4, 6, 0, 1]
+Выход: 9
 '''
 
-class Solution:
-    def longestConsecutive(self, nums: List[int]) -> int:
-        if not nums:
-            return 0
+from typing import List
 
-        num_set = set(nums)
-        longest = 0
+def longest_consecutive(numbers: List[int]) -> int:
+    if not numbers:
+        return 0
 
-        for num in num_set:
-            if num - 1 not in num_set:
-                current_num = num
-                current_length = 1
+    number_set = set(numbers)
+    longest_sequence = 0
 
-                while current_num + 1 in num_set:
-                    current_num += 1
-                    current_length += 1
+    for number in number_set:
+        if number - 1 not in number_set:
+            current_number = number
+            current_length = 1
 
-                longest = max(longest, current_length)
+            while current_number + 1 in number_set:
+                current_number += 1
+                current_length += 1
 
-        return longest
+            longest_sequence = max(longest_sequence, current_length)
+
+    return longest_sequence

@@ -1,37 +1,43 @@
 '''
 Given the head of a singly linked list and two integers left and right where left <= right, reverse the nodes of the list from position left to position right, and return the reversed list.
 
-Examples:
-Input:
-head = [1,2,3,4,5], left = 2, right = 4
-Output:
-[1,4,3,2,5]
+Example:
+Input: head = [1,2,3,4,5], left = 2, right = 4
+Output: [1,4,3,2,5]
 
-Input:
-head = [5], left = 1, right = 1
-Output:
-[5]
+Дан указатель head на начало односвязного списка и два целых числа left и right, где left <= right.
+Необходимо развернуть часть списка — узлы с позиций от left до right включительно — и вернуть изменённый список.
+
+Пример:
+Вход: head = [1, 2, 3, 4, 5], left = 2, right = 4
+Выход: [1, 4, 3, 2, 5]
 '''
 
-class Solution:
-    def reverseBetween(self, head: ListNode, left: int, right: int) -> ListNode:
-        if not head or left == right:
-            return head
+from typing import Optional
 
-        dummy = ListNode(0)
-        dummy.next = head
-        prev = dummy
+class ListNode:
+    def __init__(self, value: int = 0, next: Optional['ListNode'] = None):
+        self.value = value
+        self.next = next
 
-        for _ in range(left - 1):
-            prev = prev.next
+def reverse_between(head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
+    if not head or left == right:
+        return head
 
-        start = prev.next
-        then = start.next
-        
-        for _ in range(right - left):
-            start.next = then.next
-            then.next = prev.next
-            prev.next = then
-            then = start.next
+    dummy_node = ListNode(0)
+    dummy_node.next = head
+    node_before_reversal = dummy_node
 
-        return dummy.next
+    for _ in range(left - 1):
+        node_before_reversal = node_before_reversal.next
+
+    reversal_start_node = node_before_reversal.next
+    node_to_move = reversal_start_node.next
+
+    for _ in range(right - left):
+        reversal_start_node.next = node_to_move.next
+        node_to_move.next = node_before_reversal.next
+        node_before_reversal.next = node_to_move
+        node_to_move = reversal_start_node.next
+
+    return dummy_node.next

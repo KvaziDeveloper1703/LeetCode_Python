@@ -3,38 +3,42 @@ Given the head of a linked list and a value x, partition it such that all nodes 
 You should preserve the original relative order of the nodes in each of the two partitions.
 
 Examples:
-Input:
-head = [1,4,3,2,5,2], x = 3
-Output:
-[1,2,2,4,3,5]
+Input: head = [1,4,3,2,5,2], x = 3
+Output: [1,2,2,4,3,5]
 
-Input:
-head = [2,1], x = 2
-Output:
-[1,2]
+Дан указатель head на начало связного списка и значение x. Необходимо перестроить список так, чтобы все узлы с значениями меньше x шли перед узлами с значениями, большими или равными x.
+При этом нужно сохранить исходный относительный порядок узлов в каждой из двух частей (до x и после/включая x).
+
+Пример:
+Вход: head = [1, 4, 3, 2, 5, 2], x = 3
+Выход: [1, 2, 2, 4, 3, 5]
 '''
 
-class Solution:
-    def partition(self, head: Optional[ListNode], x: int) -> Optional[ListNode]:
-        less_head = ListNode(0)
-        greater_head = ListNode(0)
-        
-        less = less_head
-        greater = greater_head
-        
-        current = head
+from typing import Optional
 
-        while current:
-            if current.val < x:
-                less.next = current
-                less = less.next
-            else:
-                greater.next = current
-                greater = greater.next
-            current = current.next
+class ListNode:
+    def __init__(self, value: int = 0, next: Optional['ListNode'] = None):
+        self.value = value
+        self.next = next
 
-        less.next = greater_head.next
+def partition(head: Optional[ListNode], x: int) -> Optional[ListNode]:
+    less_head = ListNode(0)
+    greater_head = ListNode(0)
+    
+    less = less_head
+    greater = greater_head
+    current = head
 
-        greater.next = None
+    while current:
+        if current.value < x:
+            less.next = current
+            less = less.next
+        else:
+            greater.next = current
+            greater = greater.next
+        current = current.next
 
-        return less_head.next
+    greater.next = None
+    less.next = greater_head.next
+
+    return less_head.next

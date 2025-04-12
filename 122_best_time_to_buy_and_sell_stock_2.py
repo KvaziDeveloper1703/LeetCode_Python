@@ -13,16 +13,29 @@ Output: 7
 Input: prices = [1, 2, 3, 4, 5]
 Output: 4
 
-Input: prices = [7, 6, 4, 3, 1]
-Output: 0
+Дан массив целых чисел prices, где prices[i] — это цена акции в i-й день.
+Каждый день вы можете покупать и/или продавать акции.
+Однако вы можете держать не более одной акции одновременно, то есть перед тем как купить новую акцию, вы должны продать текущую.
+Разрешено покупать и продавать акцию в один и тот же день.
+
+Верните максимальную прибыль, которую можно получить.
+
+Примеры:
+Вход: prices = [7, 1, 5, 3, 6, 4]
+Выход: 7
+
+Вход: prices = [1, 2, 3, 4, 5]
+Выход: 4
 '''
 
-class Solution:
-    def maxProfit(self, prices: List[int]) -> int:
-        profit = 0
+from typing import List
 
-        for i in range(1, len(prices)):
-            if prices[i] > prices[i - 1]:
-                profit += prices[i] - prices[i - 1]
+def max_profit(prices: List[int]) -> int:
+    total_profit = 0
 
-        return profit
+    for day in range(1, len(prices)):
+        if prices[day] > prices[day - 1]:
+            daily_profit = prices[day] - prices[day - 1]
+            total_profit += daily_profit
+
+    return total_profit

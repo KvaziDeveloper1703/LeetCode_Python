@@ -1,40 +1,49 @@
 '''
-You are given two strings s and t. Determine if they are isomorphic.
-Two strings are isomorphic if the characters in s can be replaced to get t, with the following rules:
-+ Every occurrence of a character in s must be replaced with the same character in t.
-+ The character mapping must preserve the order of characters.
-+ No two characters in s can map to the same character in t, but a character can map to itself.
+You are given two strings S and T. Determine if they are isomorphic.
+Two strings are isomorphic if the characters in S can be replaced to get T, with the following rules:
++ Every occurrence of a character in S must be replaced with the same character in T;
++ The character mapping must preserve the order of characters;
++ No two characters in S can map to the same character in T, but a character can map to itself.
 
 Examples:
-Input: s = "egg", t = "add"
+Input: S = "egg", T = "add"
 Output: true
 
-Input: s = "foo", t = "bar"
+Input: S = "foo", T = "bar"
 Output: false
 
-Input: s = "paper", t = "title"
-Output: true
+Даны две строки S и T. Необходимо определить, являются ли они изоморфными.
+Две строки считаются изоморфными, если символы в строке S можно заменить, чтобы получить строку T, при соблюдении следующих условий:
++ Каждое вхождение символа из S должно заменяться одним и тем же символом из T;
++ Порядок символов должен сохраняться;
++ Два разных символа из S не могут отображаться в один и тот же символ из T, но один символ может отображаться сам на себя.
+
+Примеры:
+Ввод: S = "egg", T = "add"
+Вывод: true
+
+Ввод: S = "foo", T = "bar"
+Вывод: false
 '''
 
-class Solution:
-    def isIsomorphic(self, s: str, t: str) -> bool:
-        if len(s) != len(t):
-            return False
+def is_isomorphic(S: str, T: str) -> bool:
+    if len(S) != len(T):
+        return False
 
-        s_to_t = {}
-        t_to_s = {}
+    mapping_st = {}
+    mapping_ts = {}
 
-        for char_s, char_t in zip(s, t):
-            if char_s in s_to_t:
-                if s_to_t[char_s] != char_t:
-                    return False
-            else:
-                s_to_t[char_s] = char_t
+    for source_character, target_character in zip(S, T):
+        if source_character in mapping_st:
+            if mapping_st[source_character] != target_character:
+                return False
+        else:
+            mapping_st[source_character] = target_character
 
-            if char_t in t_to_s:
-                if t_to_s[char_t] != char_s:
-                    return False
-            else:
-                t_to_s[char_t] = char_s
+        if target_character in mapping_ts:
+            if mapping_ts[target_character] != source_character:
+                return False
+        else:
+            mapping_ts[target_character] = source_character
 
-        return True
+    return True

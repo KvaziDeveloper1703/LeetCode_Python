@@ -4,23 +4,39 @@ A customer's wealth is the sum of money they have in all their bank accounts.
 Return the maximum wealth among all customers.
 
 Examples:
-Input: accounts = [[1, 2, 3], [3, 2, 1]]
+Input: accounts = [[1, 2, 3], 
+                   [3, 2, 1]]
 Output: 6
 
-Input: accounts = [[1, 5], [7, 3], [3, 5]]
+Input: accounts = [[1, 5], 
+                   [7, 3], 
+                   [3, 5]]
 Output: 10
 
-Input: accounts = [[2, 8, 7], [7, 1, 3], [1, 9, 5]]
-Output: 17
+Дан двумерный массив целых чисел accounts, где accounts[i][j] — это сумма денег, которую i-й клиент имеет в j-м банке.
+Богатство клиента — это сумма всех его средств во всех банках.
+
+Необходимо вернуть максимальное богатство среди всех клиентов.
+
+Примеры:
+Вход: accounts = [[1, 2, 3],  
+                  [3, 2, 1]]
+Выход: 6
+
+Вход: accounts = [[1, 5],  
+                  [7, 3],  
+                  [3, 5]]
+Выход: 10
 """
 
-class Solution(object):
-    def maximumWealth(self, accounts):
-        max_wealth = 0
-        for customer in accounts:
-            current_wealth = sum(customer)
+from typing import List
 
-            if current_wealth > max_wealth:
-                max_wealth = current_wealth
+def maximum_wealth(accounts: List[List[int]]) -> int:
+    maximum_total_wealth = 0
 
-        return max_wealth
+    for customer_accounts in accounts:
+        customer_wealth = sum(customer_accounts)
+        if customer_wealth > maximum_total_wealth:
+            maximum_total_wealth = customer_wealth
+
+    return maximum_total_wealth

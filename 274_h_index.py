@@ -8,17 +8,28 @@ Output: 3
 
 Input: citations = [1, 3, 1]
 Output: 1
+
+Дан массив целых чисел citations, где citations[i] — это количество цитирований, полученных исследователем за его i-ю статью.
+Необходимо вернуть h-индекс — максимальное число h такое, что у исследователя есть как минимум h статей, каждая из которых была процитирована не менее чем h раз.
+
+Примеры:
+Ввод: citations = [3, 0, 6, 1, 5]
+Вывод: 3
+
+Ввод: citations = [1, 3, 1]
+Вывод: 1
 '''
 
-class Solution:
-    def hIndex(self, citations: List[int]) -> int:
-        citations.sort(reverse=True)
-        h = 0
+from typing import List
 
-        for i, citation in enumerate(citations):
-            if citation >= i + 1:
-                h = i + 1
-            else:
-                break
+def h_index(citations: List[int]) -> int:
+    citations.sort(reverse=True)
+    h_index = 0
 
-        return h
+    for i, citation in enumerate(citations):
+        if citation >= i + 1:
+            h_index = i + 1
+        else:
+            break
+
+    return h_index

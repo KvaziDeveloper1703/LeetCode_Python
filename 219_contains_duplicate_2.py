@@ -1,27 +1,32 @@
 '''
-Given an integer array nums and an integer k, return true if there are two distinct indices i and j in the array such that nums[i] == nums[j] and abs(i - j) <= k.
+Given an integer array numbers and an integer k. Return true if there are two distinct indices i and j in the array such that numbers[i] == numbers[j] and abs(i - j) <= k.
 
-Example 1:
-Input: nums = [1,2,3,1], k = 3
+Examples:
+Input: numbers = [1,2,3,1], k = 3
 Output: true
 
-Example 2:
-Input: nums = [1,0,1,1], k = 1
+Input: numbers = [1,0,1,1], k = 1
 Output: true
 
-Example 3:
-Input: nums = [1,2,3,1,2,3], k = 2
-Output: false
+Дан массив целых чисел numbers и целое число k. Необходимо определить, существуют ли два различных индекса i и j, такие что: numbers[i] == numbers[j], и |i - j| <= k. 
+Верните true, если такие индексы существуют, иначе — false.
+
+Примеры:
+Ввод: numbers = [1, 2, 3, 1], k = 3
+Вывод: true
+
+Ввод: numbers = [1, 0, 1, 1], k = 1
+Вывод: true
 '''
 
-class Solution:
-    def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
-        num_index_map = {}
-        
-        for i, num in enumerate(nums):
-            if num in num_index_map and i - num_index_map[num] <= k:
-                return True
+from typing import List
 
-            num_index_map[num] = i
+def contains_nearby_duplicate(numbers: List[int], k: int) -> bool:
+    num_index_map = {}
 
-        return False
+    for index, number in enumerate(numbers):
+        if number in num_index_map and index - num_index_map[number] <= k:
+            return True
+        num_index_map[number] = index
+
+    return False

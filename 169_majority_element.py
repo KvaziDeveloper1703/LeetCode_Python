@@ -24,11 +24,11 @@ Output: 2
 
 from typing import List
 
-def majority_element(nums: List[int]) -> int:
+def majority_element(numbers: List[int]) -> int:
     candidate = None
     count = 0
 
-    for number in nums:
+    for number in numbers:
         if count == 0:
             candidate = number
         count += 1 if number == candidate else -1

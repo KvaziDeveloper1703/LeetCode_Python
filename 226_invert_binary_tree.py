@@ -30,7 +30,7 @@ class TreeNode:
         self.right = right
 
 class Solution:
-    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+    def invert_tree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         if root is None:
             return None
 

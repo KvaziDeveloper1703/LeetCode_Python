@@ -16,52 +16,30 @@ Both get and put must run in O(1) time complexity.
 Обе операции — get и put — должны выполняться за O(1) по времени.
 '''
 
+from collections import OrderedDict
+
 class ListNode:
     def __init__(self, key: int = 0, value: int = 0):
         self.key = key
         self.value = value
-        self.prev = None
+        self.previous = None
         self.next = None
 
 class LRUCache:
 
     def __init__(self, capacity: int):
-        self.capacity = capacity
-        self.cache = {}
-        self.head = ListNode()
-        self.tail = ListNode()
-        self.head.next = self.tail
-        self.tail.prev = self.head
-
-    def _remove(self, node: ListNode):
-        node.prev.next = node.next
-        node.next.prev = node.prev
-
-    def _insert_at_front(self, node: ListNode):
-        node.next = self.head.next
-        node.prev = self.head
-        self.head.next.prev = node
-        self.head.next = node
+        self.cap = capacity
+        self.cache = OrderedDict()
 
     def get(self, key: int) -> int:
-        if key in self.cache:
-            node = self.cache[key]
-            self._remove(node)
-            self._insert_at_front(node)
-            return node.value
-        return -1
+        if key not in self.cache:
+            return -1
+        self.cache.move_to_end(key)
+        return self.cache[key]
 
     def put(self, key: int, value: int) -> None:
         if key in self.cache:
-            node = self.cache[key]
-            node.value = value
-            self._remove(node)
-            self._insert_at_front(node)
-        else:
-            if len(self.cache) == self.capacity:
-                lru_node = self.tail.prev
-                self._remove(lru_node)
-                del self.cache[lru_node.key]
-            new_node = ListNode(key, value)
-            self.cache[key] = new_node
-            self._insert_at_front(new_node)
+            self.cache.move_to_end(key)
+        self.cache[key] = value
+        if len(self.cache) > self.cap:
+            self.cache.popitem(last=False)

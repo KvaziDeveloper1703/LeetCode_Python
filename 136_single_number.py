@@ -22,9 +22,8 @@ Output: 4
 
 from typing import List
 
-class Solution:
-    def single_number(self, numbers: List[int]) -> int:
-        result = 0
-        for number in numbers:
-            result ^= number
-        return result
+def single_number(self, numbers: List[int]) -> int:
+    result = 0
+    for number in numbers:
+        result ^= number
+    return result

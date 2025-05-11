@@ -22,7 +22,7 @@ Output: 4
 
 from typing import List
 
-def single_number(self, numbers: List[int]) -> int:
+def single_number(numbers: List[int]) -> int:
     result = 0
     for number in numbers:
         result ^= number

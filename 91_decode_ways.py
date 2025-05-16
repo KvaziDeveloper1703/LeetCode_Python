@@ -1,0 +1,48 @@
+'''
+You have intercepted a secret message encoded as a string of numbers. The message is decoded via the following mapping:
+    + "1" → 'A'
+    + "2" → 'B'
+    + ...
+    + "25" → 'Y'
+    + "26" → 'Z'
+
+There can be multiple ways to decode the message because some digit groupings overlap (e.g., "2" and "5" vs "25").
+
+For example, the string "11106" can be decoded as:
+    + "AAJF" with grouping (1, 1, 10, 6)
+    + "KJF" with grouping (11, 10, 6)
+
+The grouping (1, 11, 06) is invalid, because "06" is not a valid code.
+Given a string s containing only digits, return the number of ways to decode it. If no valid decoding exists, return 0.
+All test cases are guaranteed to fit in a 32-bit integer.
+
+Examples:
+Input: s = "12"
+Output: 2
+
+Input: s = "226"
+Output: 3
+
+Вы перехватили секретное сообщение, закодированное в виде строки из цифр. Расшифровка происходит по следующему правилу:
+    + "1" → 'A'
+    + "2" → 'B'
+    + ...
+    + "25" → 'Y'
+    + "26" → 'Z'
+
+Некоторые группы цифр могут перекрываться, поэтому существует несколько способов расшифровать сообщение. Например, "2" и "5" отдельно или вместе как "25".
+Например, строку "11106" можно расшифровать так:
+    + "AAJF" — разбиение на (1, 1, 10, 6)
+    + "KJF" — разбиение на (11, 10, 6)
+
+Разбиение (1, 11, 06) недопустимо, так как "06" не является корректным кодом (нельзя использовать числа с ведущими нулями).
+Дана строка s, содержащая только цифры. Верните количество способов, которыми её можно расшифровать. Если ни одного способа нет — верните 0.
+Все тесты гарантировано помещаются в 32-битное целое число.
+
+Примеры:
+Ввод: s = "12"
+Вывод: 2
+
+Ввод: s = "226"
+Вывод: 3
+'''

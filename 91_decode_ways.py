@@ -46,3 +46,21 @@ Output: 3
 Ввод: s = "226"
 Вывод: 3
 '''
+
+def num_decodings(encoded_string: str) -> int:
+    if not encoded_string or encoded_string[0] == '0':
+        return 0
+
+    length = len(encoded_string)
+    decoding_ways = [0] * (length + 1)
+    decoding_ways[0] = 1
+    decoding_ways[1] = 1
+
+    for index in range(2, length + 1):
+        if encoded_string[index - 1] != '0':
+            decoding_ways[index] += decoding_ways[index - 1]
+        two_digit_number = int(encoded_string[index - 2:index])
+        if 10 <= two_digit_number <= 26:
+            decoding_ways[index] += decoding_ways[index - 2]
+
+    return decoding_ways[length]

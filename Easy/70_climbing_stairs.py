@@ -1,6 +1,7 @@
 '''
 You are climbing a staircase. It takes n steps to reach the top.
-Each time, you can either climb 1 step or 2 steps. In how many distinct ways can you climb to the top?
+Each time, you can either climb 1 step or 2 steps. 
+In how many distinct ways can you climb to the top?
 
 Examples:
 Input: n = 2
@@ -14,11 +15,11 @@ Output: 3
 Сколько существует различных способов добраться до вершины лестницы?
 
 Примеры:
-Вход: n = 2
-Выход: 2
+Ввод: n = 2
+Вывод: 2
 
-Вход: n = 3
-Выход: 3
+Ввод: n = 3
+Вывод: 3
 '''
 
 def climb_stairs(n: int) -> int:

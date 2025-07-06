@@ -3,9 +3,9 @@ You are given an integer array numbers and an integer value. Your task is to rem
 After removing all instances of value, return the number of elements that remain, denoted as k.
 
 Requirements:
-+ Modify the array numbers in-place such that the first k elements are the elements not equal to value;
-+ The remaining elements beyond index k - 1 do not matter — you can leave them as-is;
-+ Return the value of k.
+    + Modify the array numbers in-place such that the first k elements are the elements not equal to value;
+    + The remaining elements beyond index k - 1 do not matter — you can leave them as-is;
+    + Return the value of k.
 
 Examples:
 Input: numbers = [3, 2, 2, 3], value = 3
@@ -18,15 +18,15 @@ Output: 5, numbers = [0, 1, 4, 0, 3, _, _, _]
 После удаления всех вхождений value верните количество оставшихся элементов — обозначим его как k.
 
 Требования:
-+ Измените массив numbers на месте так, чтобы первые k элементов не были равны value;
-+ Остальные элементы массива не имеют значения — можно оставить как есть;
-+ Верните значение k.
+    + Измените массив numbers на месте так, чтобы первые k элементов не были равны value;
+    + Остальные элементы массива не имеют значения — можно оставить как есть;
+    + Верните значение k.
 
 Примеры:
-Вход: numbers = [3, 2, 2, 3], value = 3
+Ввод: numbers = [3, 2, 2, 3], value = 3
 Выход: 2, numbers = [2, 2, _, _]
 
-Вход: numbers = [0, 1, 2, 2, 3, 0, 4, 2], value = 2
+Ввод: numbers = [0, 1, 2, 2, 3, 0, 4, 2], value = 2
 Выход: 5, numbers = [0, 1, 4, 0, 3, _, _, _]
 '''
 

@@ -1,5 +1,5 @@
 '''
-Given an integer row_index, return the row_indexᵗʰ (0-indexed) row of Pascal's triangle.
+Given an integer row_index, return the row_index row of Pascal's triangle.
 In Pascal's triangle, each number is the sum of the two numbers directly above it.
 
 Examples:
@@ -9,7 +9,7 @@ Output: [1,3,3,1]
 Input: row_index = 0
 Output: [1]
 
-Дано целое число row_index. Верните строку с индексом row_index (нумерация с 0) из треугольника Паскаля.
+Дано целое число row_index. Верните строку с индексом row_index из треугольника Паскаля.
 В треугольнике Паскаля каждое число — это сумма двух чисел, находящихся непосредственно над ним.
 
 Примеры:

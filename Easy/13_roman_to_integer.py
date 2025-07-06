@@ -1,6 +1,6 @@
 '''
 Roman numerals are written using the symbols I, V, X, L, C, D, and M. Each symbol has a fixed value, and numbers are formed by combining them. Usually, symbols are placed from largest to smallest, left to right.
-However, if a smaller symbol comes before a larger one, it means subtraction (e.g., IV = 4, IX = 9).
+However, if a smaller symbol comes before a larger one, it means subtraction.
 
 Given a string S representing a Roman numeral, convert it to an integer.
 
@@ -11,11 +11,8 @@ Output: 3
 Input: "LVIII"
 Output: 58
 
-Input: "MCMXCIV"
-Output: 1994
-
 Римские цифры записываются с использованием символов I, V, X, L, C, D и M. Каждый символ имеет фиксированное значение, а числа формируются путём их комбинации. Обычно символы записываются от большего к меньшему — слева направо.
-Однако, если меньший символ стоит перед большим, это означает вычитание (например, IV = 4, IX = 9).
+Однако, если меньший символ стоит перед большим, это означает вычитание.
 
 Дана строка S, представляющая римское число — преобразуйте её в целое число.
 
@@ -25,12 +22,9 @@ Output: 1994
 
 Вход: "LVIII"
 Выход: 58
-
-Вход: "MCMXCIV"
-Выход: 1994
 '''
 
-def roman_to_integer(self, S: str) -> int:
+def roman_to_integer(S: str) -> int:
     roman = {
         'I': 1,
         'V': 5,

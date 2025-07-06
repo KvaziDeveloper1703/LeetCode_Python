@@ -1,30 +1,30 @@
 '''
-Given a non-negative integer x, return the square root of x, rounded down to the nearest integer. The result must also be non-negative.
+Given a non-negative integer n, return the square root of n, rounded down to the nearest integer. The result must also be non-negative.
 
 Example:
-Input: x = 4
+Input: n = 4
 Output: 2
 
-Дано неотрицательное целое число x. Требуется вернуть квадратный корень из x, округлённый вниз до ближайшего целого. Результат должен быть также неотрицательным.
+Дано неотрицательное целое число n. Требуется вернуть квадратный корень из n, округлённый вниз до ближайшего целого. Результат должен быть также неотрицательным.
 
 Пример:
-Ввод: x = 4
+Ввод: n = 4
 Вывод: 2
 '''
 
-def my_sqrt(x: int) -> int:
-    if x < 2:
-        return x
+def sqrt(n: int) -> int:
+    if n < 2:
+        return n
     
     left = 1
-    right = x // 2
+    right = n // 2
     
     while left <= right:
         middle = (left + right) // 2
         square = middle * middle
-        if square == x:
+        if square == n:
             return middle
-        elif square < x:
+        elif square < n:
             left = middle + 1
         else:
             right = middle - 1

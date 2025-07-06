@@ -5,10 +5,10 @@ Merge the two lists into one sorted list. The list should be made by splicing to
 Return the head of the merged linked list.
 
 Examples:
-Input: list1 = [1,2,4], list2 = [1,3,4]
+Input: list_1 = [1,2,4], list_2 = [1,3,4]
 Output: [1,1,2,3,4,4]
 
-Input: list1 = [], list2 = []
+Input: list_1 = [], list_2 = []
 Output: []
 
 Даны головы двух отсортированных связанных списков list_1 и list_2.
@@ -17,10 +17,10 @@ Output: []
 Верните голову объединённого связанного списка.
 
 Примеры:
-Вход: list1 = [1, 2, 4], list2 = [1, 3, 4]
+Ввод: list_1 = [1, 2, 4], list_2 = [1, 3, 4]
 Выход: [1, 1, 2, 3, 4, 4]
 
-Вход: list1 = [], list2 = []
+Ввод: list_1 = [], list_2 = []
 Выход: []
 '''
 

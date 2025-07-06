@@ -28,14 +28,12 @@ from typing import List
 
 def search_insert(numbers: List[int], target: int) -> int:
     left, right = 0, len(numbers) - 1
-    
     while left <= right:
-        mid = (left + right) // 2
-        if numbers[mid] == target:
-            return mid
-        elif numbers[mid] < target:
-            left = mid + 1
+        middle = (left + right) // 2
+        if numbers[middle] == target:
+            return middle
+        elif numbers[middle] < target:
+            left = middle + 1
         else:
-            right = mid - 1
-    
+            right = middle - 1
     return left

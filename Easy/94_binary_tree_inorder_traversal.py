@@ -2,9 +2,9 @@
 You are given the root of a binary tree. Your task is to return the inorder traversal of the tree's node values.
 
 Inorder traversal means:
-+ Visit the left subtree;
-+ Then visit the current node;
-+ Then visit the right subtree.
+    + Visit the left subtree;
+    + Then visit the current node;
+    + Then visit the right subtree.
 
 Return a list of integers representing the values of the nodes in inorder.
 

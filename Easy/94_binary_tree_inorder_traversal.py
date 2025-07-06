@@ -15,12 +15,12 @@ Output: [1, 3, 2]
 Input: root = [1, 2, 3, 4, 5, null, 8, null, null, 6, 7, 9]
 Output: [4, 2, 6, 5, 7, 1, 3, 9, 8]
 
-Дан корень бинарного дерева root. Нужно вернуть содержимое узлов дерева в порядке симметричного обхода (inorder traversal).
+Дан корень бинарного дерева root. Нужно вернуть содержимое узлов дерева в порядке симметричного обхода.
 
 Симметричный обход — это:
-+ Сначала обход левого поддерева;
-+ Затем текущий узел;
-+ Затем обход правого поддерева.
+    + Сначала обход левого поддерева;
+    + Затем текущий узел;
+    + Затем обход правого поддерева.
 
 Необходимо вернуть cписок значений узлов в порядке симметричного обхода.
 
@@ -40,15 +40,14 @@ class TreeNode:
         self.left = left
         self.right = right
 
-class Solution:
-    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        result = []
+def inorder_traversal(root: Optional[TreeNode]) -> List[int]:
+    result = []
 
-        def inorder(node: Optional[TreeNode]):
-            if node:
-                inorder(node.left)
-                result.append(node.value)
-                inorder(node.right)
+    def inorder(node: Optional[TreeNode]):
+        if node:
+            inorder(node.left)
+            result.append(node.value)
+            inorder(node.right)
 
-        inorder(root)
-        return result
+    inorder(root)
+    return result

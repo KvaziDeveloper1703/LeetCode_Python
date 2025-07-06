@@ -25,10 +25,10 @@ Output: [1,2]
 from typing import List
 
 def two_sum(numbers: List[int], target: int) -> List[int]:
-        numbers_dictionary = {}
-        for i, number in enumerate(numbers):
-            complement = target - number
-            if complement in numbers_dictionary:
-                return [numbers_dictionary[complement], i]
-            numbers_dictionary[number] = i
-        return []
+    numbers_dictionary = {}
+    for i, number in enumerate(numbers):
+        complement = target - number
+        if complement in numbers_dictionary:
+            return [numbers_dictionary[complement], i]
+        numbers_dictionary[number] = i
+    return []

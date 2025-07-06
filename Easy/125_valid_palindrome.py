@@ -1,31 +1,44 @@
 '''
 A palindrome is a phrase that reads the same forward and backward after:
-+ Converting all letters to lowercase;
-+ Removing all non-alphanumeric characters.
+    + Converting all letters to lowercase;
+    + Removing all non-alphanumeric characters.
 
-Given a string S, return true if it is a palindrome, otherwise return false.
+Given a string S, return True if it is a palindrome, otherwise return False.
 
 Examples:
 Input: S = "A man, a plan, a canal: Panama"
-Output: true
+Output: True
 
 Input: S = "race a car"
-Output: false
+Output: False
 
 Палиндром — это фраза, которая читается одинаково слева направо и справа налево после следующих преобразований:
-Все буквы приводятся к нижнему регистру;
-Удаляются все неалфавитно-цифровые символы (пробелы, знаки препинания и т. д.).
+    + Все буквы приводятся к нижнему регистру;
+    + Удаляются все неалфавитно-цифровые символы.
 
-Дана строка S. Верните true, если она является палиндромом, и false — в противном случае.
+Дана строка S. Верните True, если она является палиндромом, и False — в противном случае.
 
 Примеры:
-Вход: S = "A man, a plan, a canal: Panama"
-Выход: true
+Ввод: S = "A man, a plan, a canal: Panama"
+Вывод: True
 
-Вход: S = "race a car"
-Выход: false
+Ввод: S = "race a car"
+Вывод: False
 '''
 
 def is_palindrome(S: str) -> bool:
-    cleaned = ''.join(character.lower() for character in S if character.isalnum())
-    return cleaned == cleaned[::-1]
+    lower_case_string = S.lower()
+
+    cleaned = ''
+    for character in lower_case_string:
+        if character.isalnum():
+            cleaned += character
+
+    reversed_cleaned = ''
+    for i in range(len(cleaned) - 1, -1, -1):
+        reversed_cleaned += cleaned[i]
+
+    if cleaned == reversed_cleaned:
+        return True
+    else:
+        return False

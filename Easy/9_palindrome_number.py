@@ -1,33 +1,30 @@
 '''
-Given an integer x, return true if x is a palindrome, and false otherwise.
+Given an integer n, return true if n is a palindrome, and false otherwise.
 
 Examples:
-Input: x = 121
+Input: n = 121
 Output: true
 
-Input: x = -121
+Input: n = -121
 Output: false
 
-Дано целое число x. Верните true, если x является палиндромом, и false — в противном случае.
+Дано целое число n. Верните true, если n является палиндромом, и false — в противном случае.
 
 Примеры:
-Ввод: x = 121
+Ввод: n = 121
 Вывод: true
 
-Ввод: x = -121
+Ввод: n = -121
 Вывод: false
 '''
 
-def is_palindrome(x: int) -> bool:
-    if x < 0:
+def is_palindrome(n: int) -> bool:
+    if n < 0:
         return False
-
-    if x != 0 and x % 10 == 0:
+    if n != 0 and n % 10 == 0:
         return False
-
     reversed_half = 0
-    while x > reversed_half:
-        reversed_half = reversed_half * 10 + x % 10
-        x //= 10
-
-    return x == reversed_half or x == reversed_half // 10
+    while n > reversed_half:
+        reversed_half = reversed_half * 10 + n % 10
+        n //= 10
+    return n == reversed_half or n == reversed_half // 10

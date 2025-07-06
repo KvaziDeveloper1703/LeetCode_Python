@@ -22,15 +22,14 @@ class TreeNode:
         self.left = left
         self.right = right
 
-class Solution:
-    def sortedArrayToBST(self, numbers: List[int]) -> Optional[TreeNode]:
-        if not numbers:
-            return None
+def sorted_array_to_BST(self, numbers: List[int]) -> Optional[TreeNode]:
+    if not numbers:
+        return None
 
-        mid = len(numbers) // 2
-        root = TreeNode(numbers[mid])
-        
-        root.left = self.sortedArrayToBST(numbers[:mid])
-        root.right = self.sortedArrayToBST(numbers[mid+1:])
-        
-        return root
+    middle = len(numbers) // 2
+    root = TreeNode(numbers[middle])
+
+    root.left = self.sorted_array_to_BST(numbers[:middle])
+    root.right = self.sorted_array_to_BST(numbers[middle+1:])
+
+    return root

@@ -1,23 +1,23 @@
 """
-Given an integer n, return true if it is a power of two. Otherwise, return false.
+Given an integer n, return True if it is a power of two. Otherwise, return False.
 An integer n is a power of two if there exists an integer x such that n == 2^x.
 
 Examples:
 Input: n = 1
-Output: true
+Output: True
 
 Input: n = 16
-Output: true
+Output: True
 
-Дано целое число n. Верните true, если оно является степенью двойки. В противном случае верните false.
+Дано целое число n. Верните True, если оно является степенью двойки. В противном случае верните False.
 Число n является степенью двойки, если существует целое число x, такое что n == 2^x.
 
 Примеры:
 Ввод: n = 1
-Вывод: true
+Вывод: True
 
 Ввод: n = 16
-Вывод: true
+Вывод: True
 """
 
 def is_power_of_two(n):

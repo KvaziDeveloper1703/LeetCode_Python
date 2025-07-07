@@ -1,23 +1,23 @@
 '''
 A subsequence of a string is a sequence that can be formed by deleting some of the characters from the original string, without changing the order of the remaining characters.
-Given two strings S and T, return true if S is a subsequence of T, and false otherwise.
+Given two strings S and T, return True if S is a subsequence of T, and False otherwise.
 
 Examples:
 Input: S = "abc", T = "ahbgdc"
-Output: true
+Output: True
 
 Input: S = "axc", T = "ahbgdc"
-Output: false
+Output: False
 
 Подпоследовательность строки — это последовательность, которую можно получить, удалив некоторые символы из исходной строки, не меняя порядок оставшихся символов.
-Даны две строки S и T. Верните true, если S является подпоследовательностью строки T, и false — в противном случае.
+Даны две строки S и T. Верните True, если S является подпоследовательностью строки T, и False — в противном случае.
 
 Примеры:
 Ввод: S = "abc", T = "ahbgdc"
-Вывод: true
+Вывод: True
 
 Ввод: S = "axc", T = "ahbgdc"
-Вывод: false
+Вывод: False
 '''
 
 def is_subsequence(S: str, T: str) -> bool:

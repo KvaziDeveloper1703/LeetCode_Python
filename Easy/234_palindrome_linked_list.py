@@ -1,23 +1,23 @@
 '''
-Given the head of a singly linked list, return true if the list is a palindrome, or false otherwise.
+Given the head of a singly linked list, return True if the list is a palindrome, or False otherwise.
 A linked list is a palindrome if the sequence of its values reads the same forward and backward.
 
 Examples:
 Input: head = [1, 2, 2, 1]
-Output: true
+Output: True
 
 Input: head = [1, 2]
-Output: false
+Output: False
 
-Дан головной узел (head) односвязного списка. Верните true, если список является палиндромом, и false — в противном случае.
+Дан головной узел (head) односвязного списка. Верните True, если список является палиндромом, и False — в противном случае.
 Список считается палиндромом, если значения его элементов читаются одинаково слева направо и справа налево.
 
 Примеры:
 Ввод: head = [1, 2, 2, 1]
-Вывод: true
+Вывод: True
 
 Ввод: head = [1, 2]
-Вывод: false
+Вывод: False
 '''
 
 from typing import Optional
@@ -27,13 +27,12 @@ class ListNode:
         self.value = value
         self.next = next
 
-class Solution:
-    def is_palindrome(self, head: Optional[ListNode]) -> bool:
-        values = []
+def is_palindrome(head: Optional[ListNode]) -> bool:
+    values = []
+    current = head
 
-        current = head
-        while current:
-            values.append(current.value)
-            current = current.next
+    while current:
+        values.append(current.value)
+        current = current.next
 
-        return values == values[::-1]
+    return values == values[::-1]

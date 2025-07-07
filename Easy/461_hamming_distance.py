@@ -21,5 +21,5 @@ Output: 1
 '''
 
 def hamming_distance(x: int, y: int) -> int:
-    difference = x ^ y
+    difference = x^y
     return bin(difference).count('1')

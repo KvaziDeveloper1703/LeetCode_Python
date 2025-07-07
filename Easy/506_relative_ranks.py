@@ -3,14 +3,14 @@ You are given an integer array score of size n, where score[i] represents the sc
 All the scores are guaranteed to be unique.
 
 Athletes are ranked based on their scores:
-    + The athlete with the highest score gets 1st place.
+    + The athlete with the highest score gets 1st place;
     + The athlete with the 2nd highest score gets 2nd place, and so on.
 
 The ranking rules are:
-    + The 1st place athlete's rank is "Gold Medal".
-    + The 2nd place athlete's rank is "Silver Medal".
-    + The 3rd place athlete's rank is "Bronze Medal".
-    + For the 4th place to the nth place athletes, their rank is simply their placement number as a string (for example "4").
+    + The 1st place athlete's rank is "Gold Medal";
+    + The 2nd place athlete's rank is "Silver Medal";
+    + The 3rd place athlete's rank is "Bronze Medal";
+    + For the 4th place to the nth place athletes, their rank is simply their placement number as a string.
 
 Return an array answer of size n where answer[i] is the rank of the i-th athlete.
 
@@ -25,14 +25,14 @@ Output: ["Gold Medal","5","Bronze Medal","Silver Medal","4"]
 Все значения в массиве гарантированно уникальны.
 
 Спортсмены ранжируются по их баллам:
-    + Спортсмен с наибольшим количеством баллов получает 1-е место.
+    + Спортсмен с наибольшим количеством баллов получает 1-е место;
     + Спортсмен со 2-м по величине баллом получает 2-е место, и так далее.
 
 Правила присвоения рангов:
-    + Спортсмен на 1-м месте получает ранг "Gold Medal".
-    + Спортсмен на 2-м месте получает ранг "Silver Medal".
-    + Спортсмен на 3-м месте получает ранг "Bronze Medal".
-    + Спортсмены с 4-го по n-е место получают в качестве ранга их номер места в виде строки (например, "4").
+    + Спортсмен на 1-м месте получает ранг "Gold Medal";
+    + Спортсмен на 2-м месте получает ранг "Silver Medal";
+    + Спортсмен на 3-м месте получает ранг "Bronze Medal";
+    + Спортсмены с 4-го по n-е место получают в качестве ранга их номер места в виде строки.
 
 Верните массив answer размера n, где answer[i] — это ранг i-го спортсмена.
 
@@ -46,7 +46,7 @@ Output: ["Gold Medal","5","Bronze Medal","Silver Medal","4"]
 
 from typing import List
 
-def find_relative_ranks(self, score: List[int]) -> List[str]:
+def find_relative_ranks(score: List[int]) -> List[str]:
     sorted_indices = sorted(range(len(score)), key=lambda i: -score[i])
 
     result = [""] * len(score)

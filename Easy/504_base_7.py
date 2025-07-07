@@ -18,16 +18,16 @@ Output: "-10"
 Вывод: "-10"
 '''
 
-def convert_to_base_7(self, number: int) -> str:
+def convert_to_base_7(number: int) -> str:
     if number == 0:
         return "0"
-        
+
     negative = number < 0
     number = abs(number)
     result = ""
-        
+
     while number > 0:
         result = str(number % 7) + result
         number //= 7
-        
+
     return "-" + result if negative else result

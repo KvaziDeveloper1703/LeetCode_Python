@@ -1,9 +1,9 @@
 """
 Given an integer N, return a string array answer where:
-+ answer[i] == "FizzBuzz" if i is divisible by both 3 and 5;
-+ answer[i] == "Fizz" if i is divisible by 3;
-+ answer[i] == "Buzz" if i is divisible by 5;
-+ answer[i] == i if none of the above conditions are met.
+    + answer[i] == "FizzBuzz" if i is divisible by both 3 and 5;
+    + answer[i] == "Fizz" if i is divisible by 3;
+    + answer[i] == "Buzz" if i is divisible by 5;
+    + answer[i] == i if none of the above conditions are met.
 
 Return the array for all integers from 1 to N.
 
@@ -15,19 +15,19 @@ Input: n = 5
 Output: ["1", "2", "Fizz", "4", "Buzz"]
 
 Дано целое число N. Необходимо вернуть массив строк answer, где:
-+ answer[i] == "FizzBuzz", если число делится и на 3, и на 5;
-+ answer[i] == "Fizz", если число делится только на 3;
-+ answer[i] == "Buzz", если число делится только на 5;
-+ answer[i] == i (в виде строки), если ни одно из условий не выполняется.
+    + answer[i] == "FizzBuzz", если число делится и на 3, и на 5;
+    + answer[i] == "Fizz", если число делится только на 3;
+    + answer[i] == "Buzz", если число делится только на 5;
+    + answer[i] == i (в виде строки), если ни одно из условий не выполняется.
 
 Верните массив для всех целых чисел от 1 до N включительно.
 
 Примеры:
-Вход: n = 3
-Выход: ["1", "2", "Fizz"]
+Ввод: n = 3
+Вывод: ["1", "2", "Fizz"]
 
-Вход: n = 5
-Выход: ["1", "2", "Fizz", "4", "Buzz"]
+Ввод: n = 5
+Вывод: ["1", "2", "Fizz", "4", "Buzz"]
 """
 
 def fizz_buzz(limit: int) -> list[str]:

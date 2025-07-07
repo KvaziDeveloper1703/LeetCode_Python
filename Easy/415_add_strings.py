@@ -1,6 +1,5 @@
 '''
 Given two non-negative integers number_1 and number_2 represented as strings, return their sum as a string.
-
 You must not use any built-in libraries or data types for handling large integers.
 Also, do not convert the input strings directly to integers.
 
@@ -11,17 +10,15 @@ Output: "134"
 Input: number_1 = "456", number_2 = "77"
 Output: "533"
 
-Даны два неотрицательных целых числа, представленных в виде строк number_1 и number_2.
-Верните их сумму также в виде строки.
-
+Даны два неотрицательных целых числа, представленных в виде строк number_1 и number_2. Верните их сумму также в виде строки.
 Вы не можете использовать встроенные библиотеки или типы данных, которые работают с большими числами, и не можете напрямую преобразовывать строки в числа.
 
 Примеры:
-Вход: number_1 = "11", number_2 = "123"
-Выход: "134"
+Ввод: number_1 = "11", number_2 = "123"
+Вывод: "134"
 
-Вход: number_1 = "456", number_2 = "77"
-Выход: "533"
+Ввод: number_1 = "456", number_2 = "77"
+Вывод: "533"
 '''
 
 def add_strings(number_1: str, number_2: str) -> str:

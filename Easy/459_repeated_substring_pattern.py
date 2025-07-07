@@ -3,21 +3,21 @@ Given a string S, determine whether it can be constructed by taking a non-empty 
 
 Examples:
 Input: "abab"
-Output: true
+Output: True
 
 Input: "aba"
-Output: false
+Output: False
 
 Дана строка S. Необходимо определить, можно ли составить эту строку путём многократного повторения её подстроки.
 
 Примеры:
 Ввод: "abab"
-Вывод: true
+Вывод: True
 
 Ввод: "aba"
-Вывод: false
+Вывод: False
 """
 
-def repeatedSubstringPattern(S: str) -> bool:
+def repeated_substring_pattern(S: str) -> bool:
     doubled = (S + S)[1:-1]
     return S in doubled

@@ -1,12 +1,12 @@
 '''
 You are a great parent and want to give cookies to your children.
-Each child can receive at most one cookie.
-
-Each child i has a greed factor g[i], which is the minimum size of a cookie that makes the child happy.
-Each cookie j has a size s[j].
-A cookie of size s[j] can be given to a child i if s[j] >= g[i].
+    + Each child can receive at most one cookie.
+    + Each child i has a greed factor g[i], which is the minimum size of a cookie that makes the child happy.
+    + Each cookie j has a size s[j].
+    + A cookie of size s[j] can be given to a child i if s[j] >= g[i].
 
 Your goal is to maximize the number of content children.
+
 Return the maximum number of children you can make content.
 
 Examples:
@@ -17,13 +17,13 @@ Input: g = [1, 2], s = [1, 2, 3]
 Output: 2
 
 Вы — замечательный родитель и хотите раздать детям печенье.
-Каждый ребёнок может получить не более одного печенья.
-
-У каждого ребёнка i есть фактор жадности g[i] — минимальный размер печенья, которое его удовлетворит.
-У каждого печенья j есть размер s[j].
-Ребёнок будет доволен, если s[j] >= g[i].
+    + Каждый ребёнок может получить не более одного печенья.
+    + У каждого ребёнка i есть фактор жадности g[i] — минимальный размер печенья, которое его удовлетворит.
+    + У каждого печенья j есть размер s[j].
+    + Ребёнок будет доволен, если s[j] >= g[i].
 
 Ваша цель — максимизировать количество довольных детей.
+
 Верните максимальное количество детей, которых вы сможете удовлетворить.
 
 Примеры:

@@ -25,6 +25,8 @@ from typing import List
 def array_pair_sum(numbers: List[int]) -> int:
     numbers.sort()
     total = 0
+
     for i in range(0, len(numbers), 2):
         total += numbers[i]
+
     return total

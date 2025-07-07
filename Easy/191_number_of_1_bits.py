@@ -1,12 +1,12 @@
 '''
-Given a positive integer n, write a function that returns the number of set bits (1s) in its binary representation.
+Given a positive integer n, write a function that returns the number of set bits in its binary representation.
 This is also known as the Hamming weight of the number.
 
 Example:
 Input: n = 11
 Output: 3
 
-Дано положительное целое число n. Напишите функцию, которая возвращает количество установленных битов (единиц) в его двоичном представлении.
+Дано положительное целое число n. Напишите функцию, которая возвращает количество установленных битов в его двоичном представлении.
 Это также называется вес Хэмминга числа.
 
 Пример:

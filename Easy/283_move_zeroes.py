@@ -1,8 +1,6 @@
 '''
-You are given an integer array numbers.
-Move all the zeroes to the end of the array while maintaining the relative order of the non-zero elements.
+You are given an integer array numbers. Move all the zeroes to the end of the array while maintaining the relative order of the non-zero elements.
 
-Note:
 You must perform this operation in-place, meaning you cannot create a copy of the array.
 
 Examples:
@@ -12,10 +10,8 @@ Output: [1,3,12,0,0]
 Input: numbers = [0]
 Output: [0]
 
-Дан массив целых чисел numbers.
-Переместите все нули в конец массива, сохранив относительный порядок остальных элементов.
+Дан массив целых чисел numbers. Переместите все нули в конец массива, сохранив относительный порядок остальных элементов.
 
-Важно:
 Операцию нужно выполнить на месте — без создания копии массива.
 
 Примеры:

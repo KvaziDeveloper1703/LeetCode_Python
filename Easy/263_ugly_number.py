@@ -1,26 +1,26 @@
 '''
 An ugly number is a positive integer whose only prime factors are 2, 3, and 5.
-Given an integer n, return true if n is an ugly number, and false otherwise.
+Given an integer n, return True if n is an ugly number, and False otherwise.
 
 Examples:
 Input: n = 6
-Output: true
+Output: True
 
 Input: n = 1
-Output: true
+Output: True
 
 "Уродливое число" — это положительное целое число, у которого нет простых делителей, кроме 2, 3 и 5.
-Дано целое число n. Верните true, если n — уродливое число, и false в противном случае.
+Дано целое число n. Верните True, если n — уродливое число, и False в противном случае.
 
 Примеры:
-Вход: n = 6
-Выход: true
+Ввод: n = 6
+Вывод: True
 
-Вход: n = 1
-Выход: true
+Ввод: n = 1
+Вывод: True
 '''
 
-def is_ugly(self, n: int) -> bool:
+def is_ugly(n: int) -> bool:
     if n <= 0:
         return False
     for p in [2, 3, 5]:

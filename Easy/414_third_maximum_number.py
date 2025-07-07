@@ -18,7 +18,7 @@ Output: 1
 
 from typing import List
 
-def thirdMax(numbers: List[int]) -> int:
+def third_max(numbers: List[int]) -> int:
     first = second = third = float('-inf')
     for number in numbers:
         if number in (first, second, third):

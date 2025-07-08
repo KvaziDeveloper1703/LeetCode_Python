@@ -3,38 +3,39 @@ You are given three strings: s1, s2, and s3. Your task is to determine whether s
 
 Definition – Interleaving of two strings:
 An interleaving of strings s and t means they are split into substrings like:
-+ s = s1 + s2 + ... + sn
-+ t = t1 + t2 + ... + tm
+    + s = s1 + s2 + ... + sn
+    + t = t1 + t2 + ... + tm
 
 With the condition |n - m| <= 1, and the substrings are interleaved in alternating order, for example:
-+ s1 + t1 + s2 + t2 + s3 + t3 + ... or
-+ t1 + s1 + t2 + s2 + t3 + s3 + ...
+    + s1 + t1 + s2 + t2 + s3 + t3 + ... or
+    + t1 + s1 + t2 + s2 + t3 + s3 + ...
 
 That is, the order of characters in each original string must be preserved.
-Return true if s3 is a valid interleaving of s1 and s2, otherwise return false.
+
+Return True if s3 is a valid interleaving of s1 and s2, otherwise return False.
 
 Example:
 Input: s1 = "aabcc", s2 = "dbbca", s3 = "aadbbcbcac"
-Output: true
+Output: True
 
 Даны три строки: s1, s2 и s3. Необходимо определить, можно ли сформировать строку s3 путём чередования символов строк s1 и s2.
 
 Что такое чередование строк:
-
 Строки s1 и s2 разбиваются на подпоследовательности:
-+ s1 = s1₁ + s1₂ + ... + s1ₙ
-+ s2 = s2₁ + s2₂ + ... + s2ₘ
-+ с условием |n - m| <= 1
+    + s1 = s1₁ + s1₂ + ... + s1ₙ
+    + s2 = s2₁ + s2₂ + ... + s2ₘ
+    + с условием |n - m| <= 1
 
 И объединяются в чередующемся порядке:
-+ s1₁ + s2₁ + s1₂ + s2₂ + ... или s2₁ + s1₁ + s2₂ + s1₂ + ...
+    + s1₁ + s2₁ + s1₂ + s2₂ + ... или s2₁ + s1₁ + s2₂ + s1₂ + ...
 
 При этом порядок символов в s1 и s2 должен сохраняться.
-Нужно вернуть true, если s3 можно получить таким образом, иначе — false.
+
+Нужно вернуть True, если s3 можно получить таким образом, иначе — False.
 
 Пример:
 Ввод: s1 = "aabcc", s2 = "dbbca", s3 = "aadbbcbcac"
-Вывод: true
+Вывод: True
 '''
 
 def is_inter_leave(s1: str, s2: str, s3: str) -> bool:

@@ -1,6 +1,7 @@
 '''
 Given the head of a linked list, reverse the nodes of the list k at a time, and return the modified list.
-k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k, then the left-out nodes at the end should remain as they are.
+K is a positive integer and is less than or equal to the length of the linked list. 
+If the number of nodes is not a multiple of k, then the left-out nodes at the end should remain as they are.
 You may not alter the values in the list's nodes, only the nodes themselves may be changed.
 
 Examples:
@@ -11,7 +12,7 @@ Input: head = [1,2,3,4,5], k = 3
 Output: [3,2,1,4,5]
 
 Дан указатель head на начало связного списка. Необходимо разворачивать узлы списка по k штук, и вернуть изменённый список.
-k — положительное целое число, не превышающее длину списка.
+K — положительное целое число, не превышающее длину списка.
 Если количество узлов в списке не делится на k, то оставшиеся узлы в конце остаются без изменений.
 Нельзя изменять значения в узлах — можно менять только сами узлы.
 

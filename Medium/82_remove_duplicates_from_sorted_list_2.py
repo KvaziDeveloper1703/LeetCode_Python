@@ -1,5 +1,6 @@
 '''
 Given the head of a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list. 
+
 Return the linked list sorted as well.
 
 Example:
@@ -7,11 +8,12 @@ Input: head = [1,2,3,3,4,4,5]
 Output: [1,2,5]
 
 Дан указатель head на начало отсортированного связного списка. Необходимо удалить все узлы, содержащие повторяющиеся значения, оставив в списке только уникальные числа, которые встречаются только один раз в исходном списке.
+
 Верните отсортированный связный список после удаления дубликатов.
 
 Пример:
-Вход: head = [1, 2, 3, 3, 4, 4, 5]
-Выход: [1, 2, 5]
+Ввод: head = [1, 2, 3, 3, 4, 4, 5]
+Вывод: [1, 2, 5]
 '''
 
 from typing import Optional

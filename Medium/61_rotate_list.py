@@ -1,5 +1,6 @@
 '''
-Given the head of a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list. 
+Given the head of a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list.
+
 Return the linked list sorted as well.
 
 Example:
@@ -7,6 +8,7 @@ Input: head = [1,2,3,3,4,4,5]
 Output: [1,2,5]
 
 Дан указатель head на начало отсортированного связного списка. Удалите все узлы, содержащие дубликаты — то есть оставьте только те элементы, которые встречаются один раз в исходном списке.
+
 Верните результат в виде отсортированного связного списка.
 
 Пример:
@@ -27,11 +29,13 @@ def rotate_right(head: Optional[ListNode], k: int) -> Optional[ListNode]:
 
     length = 1
     current = head
+
     while current.next:
         current = current.next
         length += 1
 
     k %= length
+
     if k == 0:
         return head
 
@@ -39,6 +43,7 @@ def rotate_right(head: Optional[ListNode], k: int) -> Optional[ListNode]:
 
     steps = length - k
     new_tail = head
+
     for _ in range(steps - 1):
         new_tail = new_tail.next
 

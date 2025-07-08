@@ -1,16 +1,17 @@
 """
 You are given a 2D integer array accounts where accounts[i][j] represents the amount of money the i‑th customer has in the j‑th bank.
 A customer's wealth is the sum of money they have in all their bank accounts.
+
 Return the maximum wealth among all customers.
 
 Examples:
-Input: accounts = [[1, 2, 3], 
-                   [3, 2, 1]]
+Input: accounts = [ [1, 2, 3], 
+                    [3, 2, 1]]
 Output: 6
 
-Input: accounts = [[1, 5], 
-                   [7, 3], 
-                   [3, 5]]
+Input: accounts = [ [1, 5], 
+                    [7, 3], 
+                    [3, 5]]
 Output: 10
 
 Дан двумерный массив целых чисел accounts, где accounts[i][j] — это сумма денег, которую i-й клиент имеет в j-м банке.
@@ -19,13 +20,13 @@ Output: 10
 Необходимо вернуть максимальное богатство среди всех клиентов.
 
 Примеры:
-Вход: accounts = [[1, 2, 3],  
-                  [3, 2, 1]]
+Вход: accounts = [  [1, 2, 3],  
+                    [3, 2, 1]]
 Выход: 6
 
-Вход: accounts = [[1, 5],  
-                  [7, 3],  
-                  [3, 5]]
+Вход: accounts = [  [1, 5],  
+                    [7, 3],  
+                    [3, 5]]
 Выход: 10
 """
 

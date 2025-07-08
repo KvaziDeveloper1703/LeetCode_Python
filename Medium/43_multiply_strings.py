@@ -1,6 +1,6 @@
 '''
 Given two non-negative integers number_1 and number_2 represented as strings, return the product of number_1 and number_2, also represented as a string.
-You must not use any built-in BigInteger library or convert the inputs to integers directly.
+You must not use any built-in library or convert the inputs to integers directly.
 
 Examples:
 Input: number_1 = "2", number_2 = "3"
@@ -32,11 +32,14 @@ def multiply(first_number: str, second_number: str) -> str:
         for index_second in range(length_second - 1, -1, -1):
             digit_first = int(first_number[index_first])
             digit_second = int(second_number[index_second])
+
             product = digit_first * digit_second
+
             position_leading = index_first + index_second
             position_trailing = index_first + index_second + 1
 
             total = product + result_digits[position_trailing]
+
             result_digits[position_trailing] = total % 10
             result_digits[position_leading] += total // 10
 

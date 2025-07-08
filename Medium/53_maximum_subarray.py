@@ -1,11 +1,11 @@
 '''
-Given an integer array numbers, find a contiguous subarray (containing at least one number) which has the largest sum, and return that sum.
+Given an integer array numbers, find a contiguous subarray which has the largest sum, and return that sum.
 
 Example:
 Input: numbers = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
 Output: 6
 
-Дан целочисленный массив numbers. Найдите непрерывный подмассив (содержащий хотя бы один элемент) с наибольшей суммой, и верните эту сумму.
+Дан целочисленный массив numbers. Найдите непрерывный подмассив с наибольшей суммой, и верните эту сумму.
 
 Пример:
 Ввод: numbers = [-2, 1, -3, 4, -1, 2, 1, -5, 4]

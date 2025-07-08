@@ -27,21 +27,20 @@ class ListNode:
         self.value = value
         self.next = next
 
-class Solution:
-    def swap_pairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        dummy = ListNode(0)  
-        dummy.next = head
-        previous = dummy
-        
-        while head and head.next:
-            first = head
-            second = head.next
+def swap_pairs(head: Optional[ListNode]) -> Optional[ListNode]:
+    dummy = ListNode(0)  
+    dummy.next = head
+    previous = dummy
 
-            previous.next = second
-            first.next = second.next
-            second.next = first
+    while head and head.next:
+        first = head
+        second = head.next
 
-            previous = first
-            head = first.next
-        
-        return dummy.next
+        previous.next = second
+        first.next = second.next
+        second.next = first
+
+        previous = first
+        head = first.next
+
+    return dummy.next

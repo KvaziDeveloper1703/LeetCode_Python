@@ -1,46 +1,47 @@
 '''
-Given an input string s and a pattern p, implement regular expression matching with support for the following:
-+ '.' Matches any single character;
-+ '*' Matches zero or more of the preceding element.
+Given an input string S and a pattern P, implement regular expression matching with support for the following:
+    + '.' matches any single character;
+    + '*' matches zero or more of the preceding element.
 
 The matching should cover the entire input string.
 
 Examples:
-Input: s = "aa", p = "a"
-Output: false
+Input: S = "aa", P = "a"
+Output: False
 
-Input: s = "aa", p = "a*"
-Output: true
+Input: S = "aa", P = "a*"
+Output: True
 
-Дана строка s и шаблон p, необходимо реализовать сопоставление с регулярным выражением, поддерживающее символы:
+Дана строка S и шаблон P, необходимо реализовать сопоставление с регулярным выражением, поддерживающее символы:
 '.' — соответствует любому одному символу;
 '*' — соответствует нулю или более предыдущих символов.
 
 Сопоставление должно охватывать всю строку, а не её часть.
 
 Примеры:
-Ввод: s = "aa", p = "a"
-Вывод: false
+Ввод: S = "aa", P = "a"
+Вывод: False
 
-Ввод: s = "aa", p = "a*"
-Вывод: true
+Ввод: S = "aa", P = "a*"
+Вывод: True
 '''
 
-def is_match(input_string: str, pattern: str) -> bool:
-    input_length, pattern_length = len(input_string), len(pattern)
-    dp_table = [[False] * (pattern_length + 1) for _ in range(input_length + 1)]
+def is_match(S: str, P: str) -> bool:
+    S_length, P_length = len(S), len(P)
+    dp_table = [[False] * (P_length + 1) for _ in range(S_length + 1)]
     dp_table[0][0] = True
 
-    for pattern_index in range(1, pattern_length + 1):
-        if pattern[pattern_index - 1] == '*':
-            dp_table[0][pattern_index] = dp_table[0][pattern_index - 2]
-    
-    for input_index in range(1, input_length + 1):
-        for pattern_index in range(1, pattern_length + 1):
-            if pattern[pattern_index - 1] == input_string[input_index - 1] or pattern[pattern_index - 1] == '.':
-                dp_table[input_index][pattern_index] = dp_table[input_index - 1][pattern_index - 1]
-            elif pattern[pattern_index - 1] == '*':
-                dp_table[input_index][pattern_index] = dp_table[input_index][pattern_index - 2] or \
-                                                        (dp_table[input_index - 1][pattern_index] and 
-                                                        (pattern[pattern_index - 2] == input_string[input_index - 1] or pattern[pattern_index - 2] == '.'))
-    return dp_table[input_length][pattern_length]
+    for j in range(1, P_length + 1):
+        if P[j - 1] == '*':
+            dp_table[0][j] = dp_table[0][j - 2]
+
+    for i in range(1, S_length + 1):
+        for j in range(1, P_length + 1):
+            if P[j - 1] == S[i - 1] or P[j - 1] == '.':
+                dp_table[i][j] = dp_table[i - 1][j - 1]
+            elif P[j - 1] == '*':
+                dp_table[i][j] = dp_table[i][j - 2]
+                if P[j - 2] == S[i - 1] or P[j - 2] == '.':
+                    dp_table[i][j] = dp_table[i][j] or dp_table[i - 1][j]
+
+    return dp_table[S_length][P_length]

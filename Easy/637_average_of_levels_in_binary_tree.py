@@ -23,28 +23,27 @@ class TreeNode:
         self.left = left
         self.right = right
 
-class Solution:
-    def average_of_levels(self, root: Optional[TreeNode]) -> List[float]:
-        if not root:
-            return []
+def average_of_levels(root: Optional[TreeNode]) -> List[float]:
+    if not root:
+        return []
 
-        result = []
-        queue = deque([root])
+    result = []
+    queue = deque([root])
 
-        while queue:
-            level_size = len(queue)
-            level_sum = 0
+    while queue:
+        level_size = len(queue)
+        level_sum = 0
 
-            for _ in range(level_size):
-                current_node = queue.popleft()
-                level_sum += current_node.value
+        for _ in range(level_size):
+            current_node = queue.popleft()
+            level_sum += current_node.value
 
-                if current_node.left:
-                    queue.append(current_node.left)
-                if current_node.right:
-                    queue.append(current_node.right)
+            if current_node.left:
+                queue.append(current_node.left)
+            if current_node.right:
+                queue.append(current_node.right)
 
-            average = level_sum / level_size
-            result.append(average)
+        average = level_sum / level_size
+        result.append(average)
 
-        return result
+    return result

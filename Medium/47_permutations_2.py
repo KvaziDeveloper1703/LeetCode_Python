@@ -3,9 +3,9 @@ Given a collection of numbers, that might contain duplicates, return all possibl
 
 Example:
 Input: numbers = [1, 1, 2]
-Output: [[1, 1, 2],
-         [1, 2, 1],
-         [2, 1, 1]
+Output: [   [1, 1, 2],
+            [1, 2, 1],
+            [2, 1, 1]
     ]
 
 Дан массив numbers, который может содержать повторяющиеся числа. Необходимо вернуть все возможные уникальные перестановки элементов массива. Ответ можно вернуть в любом порядке.
@@ -23,6 +23,7 @@ from typing import List
 def permute_unique(numbers: List[int]) -> List[List[int]]:
     result = []
     numbers.sort()
+
     used = [False] * len(numbers)
 
     def backtrack(path):

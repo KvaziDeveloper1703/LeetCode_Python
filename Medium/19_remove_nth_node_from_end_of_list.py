@@ -11,11 +11,11 @@ Output: []
 Дан указатель head на начало связного списка. Удалите n-й узел с конца списка и верните новый head.
 
 Примеры:
-Вход: head = [1, 2, 3, 4, 5], n = 2
-Выход: [1, 2, 3, 5]
+Ввод: head = [1, 2, 3, 4, 5], n = 2
+Вывод: [1, 2, 3, 5]
 
-Вход: head = [1], n = 1
-Выход: []
+Ввод: head = [1], n = 1
+Вывод: []
 '''
 
 from typing import Optional
@@ -28,6 +28,7 @@ class ListNode:
 def remove_nth_from_end(head: ListNode, n: int) -> Optional[ListNode]:
     dummy = ListNode(0)
     dummy.next = head
+
     slow = dummy
     fast = dummy
 

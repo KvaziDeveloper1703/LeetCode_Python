@@ -1,7 +1,7 @@
 '''
 You are given an integer array numbers. Your task is to find all unique triplets [numbers[i], numbers[j], numbers[k]] such that:
-+ i != j, i != k, and j != k;
-+ numbers[i] + numbers[j] + numbers[k] == 0.
+    + i != j, i != k, and j != k;
+    + numbers[i] + numbers[j] + numbers[k] == 0.
 
 Return a list of all such distinct triplets.
 
@@ -12,24 +12,18 @@ Output: [[-1,-1,2], [-1,0,1]]
 Input: numbers = [0,1,1]
 Output: []
 
-Input: numbers = [0,0,0]
-Output: [[0,0,0]]
-
 Дан целочисленный массив numbers. Ваша задача — найти все уникальные тройки чисел [numbers[i], numbers[j], numbers[k]], такие что:
-+ i != j, i != k, и j != k;
-+ numbers[i] + numbers[j] + numbers[k] == 0.
+    + i != j, i != k, и j != k;
+    + numbers[i] + numbers[j] + numbers[k] == 0.
 
 Верните список всех таких различных троек.
 
 Примеры:
-Вход: numbers = [-1, 0, 1, 2, -1, -4]
-Выход: [[-1, -1, 2], [-1, 0, 1]]
+Ввод: numbers = [-1, 0, 1, 2, -1, -4]
+Вывод: [[-1, -1, 2], [-1, 0, 1]]
 
-Вход: numbers = [0, 1, 1]
-Выход: []
-
-Вход: numbers = [0, 0, 0]
-Выход: [[0, 0, 0]]
+Ввод: numbers = [0, 1, 1]
+Вывод: []
 '''
 
 from typing import List

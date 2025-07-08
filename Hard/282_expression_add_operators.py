@@ -30,28 +30,27 @@ Output: ["2*3+2", "2+3*2"]
 
 from typing import List
 
-class Solution:
-    def addOperators(self, number: str, target: int) -> List[str]:
-        result = []
+def add_operators(number: str, target: int) -> List[str]:
+    result = []
 
-        def backtrack(position: int, expression: str, current_value: int, last_operand: int):
-            if position == len(number):
-                if current_value == target:
-                    result.append(expression)
-                return
+    def backtrack(position: int, expression: str, current_value: int, last_operand: int):
+        if position == len(number):
+            if current_value == target:
+                result.append(expression)
+            return
             
-            for i in range(position + 1, len(number) + 1):
-                current_str = number[position:i]
-                if len(current_str) > 1 and current_str[0] == '0':
-                    break
-                current_int = int(current_str)
-                
-                if position == 0:
-                    backtrack(i, current_str, current_int, current_int)
-                else:
-                    backtrack(i, expression + '+' + current_str, current_value + current_int, current_int)
-                    backtrack(i, expression + '-' + current_str, current_value - current_int, -current_int)
-                    backtrack(i, expression + '*' + current_str, current_value - last_operand + last_operand * current_int, last_operand * current_int)
+        for i in range(position + 1, len(number) + 1):
+            current_str = number[position:i]
+            if len(current_str) > 1 and current_str[0] == '0':
+                break
+            current_int = int(current_str)
 
-        backtrack(0, "", 0, 0)
-        return result
+            if position == 0:
+                backtrack(i, current_str, current_int, current_int)
+            else:
+                backtrack(i, expression + '+' + current_str, current_value + current_int, current_int)
+                backtrack(i, expression + '-' + current_str, current_value - current_int, -current_int)
+                backtrack(i, expression + '*' + current_str, current_value - last_operand + last_operand * current_int, last_operand * current_int)
+
+    backtrack(0, "", 0, 0)
+    return result

@@ -1,6 +1,7 @@
 '''
 You are given a string S and an array of strings words. All the words are of the same length.
 A concatenated substring is a substring of S that consists of all the words in words concatenated together in any order, without any extra characters. Each word must appear exactly once.
+
 Return a list of starting indices in S where such concatenated substrings begin. The order of the output does not matter.
 
 Examples:
@@ -17,8 +18,7 @@ Output: [6,9,12]
 Объединённая подстрока — это такая подстрока строки S, которая состоит из всех слов из массива words, соединённых друг с другом в любом порядке, без лишних символов.
 Каждое слово должно встретиться ровно один раз.
 
-Необходимо вернуть список начальных индексов таких объединённых подстрок в строке S.
-Порядок индексов в ответе не имеет значения.
+Необходимо вернуть список начальных индексов таких объединённых подстрок в строке S. Порядок индексов в ответе не имеет значения.
 
 Примеры:
 Вход: S = "barfoothefoobarman", words = ["foo", "bar"]

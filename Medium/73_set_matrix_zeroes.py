@@ -1,22 +1,46 @@
 '''
-You are given an m x n integer matrix.
-If an element in the matrix is 0, set its entire row and column to 0.
+You are given an m x n integer matrix. If an element in the matrix is 0, set its entire row and column to 0.
 You must perform this operation in place, meaning you cannot use additional space for another matrix.
 
 Examples:
-Input: matrix = [[1,1,1], 
-                 [1,0,1],
-                 [1,1,1]]
-Output: [[1,0,1],
-         [0,0,0],
-         [1,0,1]]
+Input: matrix = [   [1,1,1], 
+                    [1,0,1],
+                    [1,1,1]
+            ]
+Output: [   [1,0,1],
+            [0,0,0],
+            [1,0,1]
+    ]
 
-Input: matrix = [[0,1,2,0], 
-                 [3,4,5,2], 
-                 [1,3,1,5]]
-Output: [[0,0,0,0],
-         [0,4,5,0],
-         [0,3,1,0]]
+Input: matrix = [   [0,1,2,0], 
+                    [3,4,5,2], 
+                    [1,3,1,5]
+            ]
+Output: [   [0,0,0,0],
+            [0,4,5,0],
+            [0,3,1,0]
+    ]
+
+Вам дана матрица целых чисел размером m x n. Если какой-либо элемент в матрице равен 0, нужно установить всю строку и весь столбец, в которых находится этот элемент, в 0.
+Необходимо выполнить эту операцию на месте, то есть нельзя использовать дополнительную память для другой матрицы.
+
+Примеры:
+Ввод: matrix = [    [1,1,1], 
+                    [1,0,1],
+                    [1,1,1]
+            ]
+Вывод: [    [1,0,1],
+            [0,0,0],
+            [1,0,1]
+    ]
+Ввод: matrix = [    [0,1,2,0], 
+                    [3,4,5,2], 
+                    [1,3,1,5]
+            ]
+Вывод: [    [0,0,0,0],
+            [0,4,5,0],
+            [0,3,1,0]
+    ]
 '''
 
 from typing import List

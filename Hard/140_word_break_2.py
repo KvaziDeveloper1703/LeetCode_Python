@@ -20,28 +20,26 @@ Output: ["cats and dog", "cat sand dog"]
 
 from typing import List
 
-class Solution:
-    def wordBreak(self, S: str, word_dict: List[str]) -> List[str]:
-        word_set = set(word_dict)
-        memo = {}
+def word_break(S: str, word_dict: List[str]) -> List[str]:
+    word_set = set(word_dict)
+    memo = {}
 
-        def backtrack(start: int) -> List[str]:
-            if start in memo:
-                return memo[start]
-            if start == len(S):
-                return [""]
+    def backtrack(start: int) -> List[str]:
+        if start in memo:
+            return memo[start]
+        if start == len(S):
+            return [""]
 
-            sentences = []
-            for end in range(start + 1, len(S) + 1):
-                word = S[start:end]
-                if word in word_set:
-                    rest_sentences = backtrack(end)
-                    for sentence in rest_sentences:
-                        if sentence:
-                            sentences.append(word + " " + sentence)
-                        else:
-                            sentences.append(word)
-            memo[start] = sentences
-            return sentences
-
-        return backtrack(0)
+        sentences = []
+        for end in range(start + 1, len(S) + 1):
+            word = S[start:end]
+            if word in word_set:
+                rest_sentences = backtrack(end)
+                for sentence in rest_sentences:
+                    if sentence:
+                        sentences.append(word + " " + sentence)
+                    else:
+                        sentences.append(word)
+        memo[start] = sentences
+        return sentences
+    return backtrack(0)

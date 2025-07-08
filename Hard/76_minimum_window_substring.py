@@ -15,11 +15,11 @@ Output: "a"
 Верните эту минимальную подстроку. Если такой подстроки не существует — верните пустую строку "".
 
 Примеры:
-Вход: S = "ADOBECODEBANC", T = "ABC"
-Выход: "BANC"
+Ввод: S = "ADOBECODEBANC", T = "ABC"
+Вывод: "BANC"
 
-Вход: S = "a", T = "a"
-Выход: "a"
+Ввод: S = "a", T = "a"
+Вывод: "a"
 '''
 
 from collections import Counter, defaultdict

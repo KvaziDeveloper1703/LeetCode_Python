@@ -16,17 +16,17 @@ Y   I   R
 '''
 
 def convert(S: str, number_of_rows: int) -> str:
-        if number_of_rows == 1 or number_of_rows >= len(S):
-            return S
+    if number_of_rows == 1 or number_of_rows >= len(S):
+        return S
 
-        rows = [''] * number_of_rows
-        current_row = 0
-        going_down = False
+    rows = [''] * number_of_rows
+    current_row = 0
+    going_down = False
 
-        for character in S:
-            rows[current_row] += character
-            if current_row == 0 or current_row == number_of_rows - 1:
-                going_down = not going_down
-            current_row += 1 if going_down else -1
+    for character in S:
+        rows[current_row] += character
+        if current_row == 0 or current_row == number_of_rows - 1:
+            going_down = not going_down
+        current_row += 1 if going_down else -1
 
-        return ''.join(rows)
+    return ''.join(rows)

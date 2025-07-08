@@ -39,18 +39,18 @@ Output: [1,2]
 from typing import List
 
 def find_error_numbers(numbers: List[int]) -> List[int]:
-        n = len(numbers)
-        seen = set()
-        duplicate = -1
-        
-        for number in numbers:
-            if number in seen:
-                duplicate = number
-            seen.add(number)
-        
-        expected_sum = n * (n + 1) // 2
-        actual_sum = sum(numbers)
-        
-        missing = expected_sum - (actual_sum - duplicate)
-        
-        return [duplicate, missing]
+    n = len(numbers)
+    seen = set()
+    duplicate = -1
+
+    for number in numbers:
+        if number in seen:
+            duplicate = number
+        seen.add(number)
+
+    expected_sum = n * (n + 1) // 2
+    actual_sum = sum(numbers)
+
+    missing = expected_sum - (actual_sum - duplicate)
+
+    return [duplicate, missing]

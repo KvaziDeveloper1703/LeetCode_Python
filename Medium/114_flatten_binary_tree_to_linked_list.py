@@ -30,21 +30,20 @@ class TreeNode:
         self.left = left
         self.right = right
 
-class Solution:
-    def flatten(self, root: Optional[TreeNode]) -> None:
-        if not root:
-            return
+def flatten(root: Optional[TreeNode]) -> None:
+    if not root:
+        return
 
-        node_stack = [root]
+    node_stack = [root]
 
-        while node_stack:
-            current_node = node_stack.pop()
+    while node_stack:
+        current_node = node_stack.pop()
 
-            if current_node.right:
-                node_stack.append(current_node.right)
-            if current_node.left:
-                node_stack.append(current_node.left)
+        if current_node.right:
+            node_stack.append(current_node.right)
+        if current_node.left:
+            node_stack.append(current_node.left)
 
-            if node_stack:
-                current_node.right = node_stack[-1]
-            current_node.left = None
+        if node_stack:
+            current_node.right = node_stack[-1]
+        current_node.left = None

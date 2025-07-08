@@ -26,7 +26,7 @@ Output: "2314"
 
 from math import factorial
 
-def getPermutation(n: int, k: int) -> str:
+def get_permutation(n: int, k: int) -> str:
     digits = [str(i) for i in range(1, n + 1)]
     permutation_result = []
     remaining_k = k - 1

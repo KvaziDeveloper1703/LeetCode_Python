@@ -1,5 +1,6 @@
 '''
-Given the head of a singly linked list and two integers left and right where left <= right, reverse the nodes of the list from position left to position right, and return the reversed list.
+Given the head of a singly linked list and two integers left and right where left <= right. 
+Reverse the nodes of the list from position left to position right, and return the reversed list.
 
 Example:
 Input: head = [1,2,3,4,5], left = 2, right = 4
@@ -9,8 +10,8 @@ Output: [1,4,3,2,5]
 Необходимо развернуть часть списка — узлы с позиций от left до right включительно — и вернуть изменённый список.
 
 Пример:
-Вход: head = [1, 2, 3, 4, 5], left = 2, right = 4
-Выход: [1, 4, 3, 2, 5]
+Ввод: head = [1, 2, 3, 4, 5], left = 2, right = 4
+Вывод: [1, 4, 3, 2, 5]
 '''
 
 from typing import Optional

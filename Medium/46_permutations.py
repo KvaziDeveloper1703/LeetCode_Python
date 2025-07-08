@@ -1,21 +1,25 @@
 '''
-Given an array numbers of distinct integers, return all possible permutations of the array. You can return the answer in any order.
+Given an array numbers of distinct integers.
+
+Return all possible permutations of the array. You can return the answer in any order.
 
 Example:
 Input: numbers = [1, 2, 3]
-Output:[[1, 2, 3],
-        [1, 3, 2],
-        [2, 1, 3],
-        [2, 3, 1],
-        [3, 1, 2],
-        [3, 2, 1]
+Output: [   [1, 2, 3],
+            [1, 3, 2],
+            [2, 1, 3],
+            [2, 3, 1],
+            [3, 1, 2],
+            [3, 2, 1]
     ]
 
-Дан массив numbers, содержащий уникальные целые числа. Необходимо вернуть все возможные перестановки этих чисел. Ответ можно вернуть в любом порядке.
+Дан массив numbers, содержащий уникальные целые числа.
+
+Необходимо вернуть все возможные перестановки этих чисел. Ответ можно вернуть в любом порядке.
 
 Пример:
 Ввод: numbers = [1, 2, 3]
-Вывод:[ [1, 2, 3],
+Вывод: [[1, 2, 3],
         [1, 3, 2],
         [2, 1, 3],
         [2, 3, 1],

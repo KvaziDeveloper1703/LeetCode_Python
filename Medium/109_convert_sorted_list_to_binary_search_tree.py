@@ -27,29 +27,32 @@ class TreeNode:
         self.left = left
         self.right = right
 
-class Solution:
-    def sortedListToBST(self, head: Optional[ListNode]) -> Optional[TreeNode]:
-        if not head:
-            return None
-        if not head.next:
-            return TreeNode(head.value)
+def sorted_list_to_BST(head: Optional[ListNode]) -> Optional[TreeNode]:
+    if not head:
+        return None
 
-        def find_middle(head):
-            previous = None
-            slow = fast = head
-            while fast and fast.next:
-                previous = slow
-                slow = slow.next
-                fast = fast.next.next
-            if previous:
-                previous.next = None
-            return slow
+    if not head.next:
+        return TreeNode(head.value)
 
-        mid = find_middle(head)
-        root = TreeNode(mid.value)
+    def find_middle(head):
+        previous = None
+        slow = fast = head
 
-        if head != mid:
-            root.left = self.sortedListToBST(head)
-        root.right = self.sortedListToBST(mid.next)
+        while fast and fast.next:
+            previous = slow
+            slow = slow.next
+            fast = fast.next.next
+        if previous:
+            previous.next = None
 
-        return root
+        return slow
+
+    middle = find_middle(head)
+    root = TreeNode(middle.value)
+
+    if head != mid:
+        root.left = sorted_list_to_BST(head)
+
+    root.right = sorted_list_to_BST(middle.next)
+
+    return root

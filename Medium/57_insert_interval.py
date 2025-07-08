@@ -1,6 +1,6 @@
 '''
-You are given an array of non-overlapping intervals intervals where intervals[i] = [start_index, end_index] represent the start and the end of the ith interval. 
-The intervals are sorted in ascending order by start_index. 
+You are given an array of non-overlapping intervals intervals where intervals[i] = [start_index, end_index] represent the start and the end of the ith interval.
+The intervals are sorted in ascending order by start_index.
 You are also given an interval new_interval = [start, end] that represents the start and end of another interval.
 
 Insert new_interval into intervals such that intervals is still sorted in ascending order by start_index and there are no overlapping intervals.
@@ -14,8 +14,8 @@ Output: [[1,5],[6,9]]
 Input: intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], new_interval = [4,8]
 Output: [[1,2],[3,10],[12,16]]
 
-Дан массив непересекающихся интервалов intervals, где intervals[i] = [начало, конец] — это начало и конец i-го интервала. 
-Интервалы отсортированы по возрастанию начала. 
+Дан массив непересекающихся интервалов intervals, где intervals[i] = [начало, конец] — это начало и конец i-го интервала.
+Интервалы отсортированы по возрастанию начала.
 Также дан новый интервал new_interval = [start, end], который нужно вставить в массив.
 
 Вставьте new_interval в intervals так, чтобы:

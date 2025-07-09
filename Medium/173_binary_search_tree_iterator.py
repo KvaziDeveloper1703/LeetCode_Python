@@ -1,5 +1,5 @@
 '''
-Implement the BSTIterator class that represents an iterator over the in-order traversal of a Binary Search Tree (BST).
+Implement the BSTIterator class that represents an iterator over the in-order traversal of a Binary Search Tree.
 
 Class methods:
 + BSTIterator(TreeNode root):
@@ -7,13 +7,13 @@ Class methods:
     + The pointer is initialized to a non-existent value smaller than any element in the BST.
 
 + boolean has_next():
-    + Returns true if there exists a next number in the in-order traversal to the right of the pointer; otherwise, returns false.
+    + Returns True if there exists a next number in the in-order traversal to the right of the pointer; otherwise, returns False.
 
 + int next():
     + Moves the pointer to the right and returns the number at the pointer;
     + The first call to next() returns the smallest element in the BST.
 
-Реализуй класс BSTIterator, который представляет итератор по бинарному дереву поиска (BST), итерирующийся в порядке симметричного обхода.
+Реализуй класс BSTIterator, который представляет итератор по бинарному дереву поиска, итерирующийся в порядке симметричного обхода.
 
 Методы класса:
 + BSTIterator(TreeNode root):
@@ -21,7 +21,7 @@ Class methods:
     + Указатель инициализируется на фиктивное значение, меньшее любого элемента в дереве.
 
 + boolean has_next():
-    + Возвращает true, если существует следующий элемент справа от текущего указателя, иначе — false.
+    + Возвращает True, если существует следующий элемент справа от текущего указателя, иначе — False.
 
 + int next():
     + Перемещает указатель на следующий элемент в порядке in-order и возвращает его значение;
@@ -37,7 +37,6 @@ class TreeNode:
         self.right = right
 
 class BSTIterator:
-    
     def __init__(self, root: Optional[TreeNode]):
         self.stack = []
         self._push_left_branch(root)

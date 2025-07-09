@@ -1,8 +1,8 @@
 '''
-Given two integers representing the numerator and denominator of a fraction, return the fraction as a string.
-+ If the fractional part is repeating, enclose the repeating part in parentheses.
-+ If there are multiple correct answers, any one is acceptable.
-+ It is guaranteed that the length of the output string will be less than 10,000 for all inputs.
+Given two integers representing the numerator and denominator of a fraction. Return the fraction as a string.
+    + If the fractional part is repeating, enclose the repeating part in parentheses;
+    + If there are multiple correct answers, any one is acceptable;
+    + It is guaranteed that the length of the output string will be less than 10,000 for all inputs.
 
 Examples:
 Input: numerator = 1, denominator = 2
@@ -12,19 +12,19 @@ Input: numerator = 2, denominator = 1
 Output: "2"
 
 Даны два целых числа — числитель и знаменатель дроби. Верните результат деления в виде строки.
-+ Если дробная часть повторяется, заключите повторяющуюся часть в скобки.
-+ Если возможно несколько правильных ответов — можно вернуть любой из них.
-+ Гарантируется, что длина строки-ответа не превышает 10 000 символов.
+    + Если дробная часть повторяется, заключите повторяющуюся часть в скобки;
+    + Если возможно несколько правильных ответов — можно вернуть любой из них;
+    + Гарантируется, что длина строки-ответа не превышает 10 000 символов.
 
 Примеры:
-Ввод: числитель = 1, знаменатель = 2
+Ввод: numerator = 1, denominator = 2
 Вывод: "0.5"
 
-Ввод: числитель = 2, знаменатель = 1
+Ввод: numerator = 2, denominator = 1
 Вывод: "2"
 '''
 
-def fractionToDecimal(self, numerator: int, denominator: int) -> str:
+def fraction_to_decimal(numerator: int, denominator: int) -> str:
     if numerator == 0:
         return "0"
 

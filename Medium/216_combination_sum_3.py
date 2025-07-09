@@ -1,26 +1,26 @@
 '''
-Find all unique combinations of k numbers that add up to a target sum n, subject to the following constraints:
-    + Only numbers from 1 to 9 can be used.
-    + Each number can be used at most once in a combination.
+Find all unique combinations of number_count numbers that add up to a target sum target_sum, subject to the following constraints:
+    + Only numbers from 1 to 9 can be used;
+    + Each number can be used at most once in a combination;
     + Return a list of all valid combinations. The same combination should not appear more than once, and the order of combinations in the list does not matter.
 
 Examples:
-Input: k = 3, n = 7
+Input: number_count = 3, target_sum = 7
 Output: [[1, 2, 4]]
 
-Input: k = 3, n = 9
+Input: number_count = 3, target_sum = 9
 Output: [[1, 2, 6], [1, 3, 5], [2, 3, 4]]
 
-Найдите все уникальные комбинации из k чисел, сумма которых равна заданному числу n, при соблюдении следующих условий:
-    + Используются только числа от 1 до 9.
-    + Каждое число может использоваться не более одного раза.
+Найдите все уникальные комбинации из number_count чисел, сумма которых равна заданному числу target_sum, при соблюдении следующих условий:
+    + Используются только числа от 1 до 9;
+    + Каждое число может использоваться не более одного раза;
     + Необходимо вернуть список всех допустимых комбинаций, без повторяющихся. Порядок комбинаций в списке не важен.
 
 Примеры:
-Ввод: k = 3, n = 7
+Ввод: number_count = 3, target_sum = 7
 Вывод: [[1, 2, 4]]
 
-Ввод: k = 3, n = 9
+Ввод: number_count = 3, target_sum = 9
 Вывод: [[1, 2, 6], [1, 3, 5], [2, 3, 4]]
 '''
 

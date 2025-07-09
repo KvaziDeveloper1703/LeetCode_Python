@@ -1,35 +1,33 @@
 '''
-You're given a DNA string s made up of characters 'A', 'C', 'G', and 'T'.
-When analyzing DNA, it's useful to find repeated sequences. Your task is to return all 10-letter-long substrings (sequences) that appear more than once in the DNA string.
+Given a DNA string S made up of characters 'A', 'C', 'G', and 'T'. When analyzing DNA, it's useful to find repeated sequences.
 
-Return the result as a list of strings, in any order.
+Return all 10-letter-long substrings that appear more than once in the DNA string. Return the result as a list of strings, in any order.
 
 Examples:
-Input: s = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"
+Input: S = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"
 Output: ["AAAAACCCCC", "CCCCCAAAAA"]
 
-Input: s = "AAAAAAAAAAAAA"
+Input: S = "AAAAAAAAAAAAA"
 Output: ["AAAAAAAAAA"]
 
-Дана строка s, представляющая ДНК-последовательность, содержащую символы 'A', 'C', 'G' и 'T'.
-Нужно найти все подстроки длиной 10 символов, которые встречаются более одного раза в строке s.
+Дана строка S, представляющая ДНК-последовательность, содержащую символы 'A', 'C', 'G' и 'T'.
 
-Верните список таких подстрок в любом порядке.
+Нужно найти все подстроки длиной 10 символов, которые встречаются более одного раза в строке S. Верните список таких подстрок в любом порядке.
 
 Примеры:
-Ввод: s = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"
+Ввод: S = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"
 Вывод: ["AAAAACCCCC", "CCCCCAAAAA"]
 
-Ввод: s = "AAAAAAAAAAAAA"
+Ввод: S = "AAAAAAAAAAAAA"
 Вывод: ["AAAAAAAAAA"]
 '''
 
-def findRepeatedDnaSequences(s: str) -> list[str]:
+def find_repeated_dna_sequences(S: str) -> list[str]:
     seen = set()
     repeated = set()
 
-    for i in range(len(s) - 9):
-        sequence = s[i:i+10]
+    for i in range(len(S) - 9):
+        sequence = S[i:i+10]
         if sequence in seen:
             repeated.add(sequence)
         else:

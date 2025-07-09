@@ -2,6 +2,7 @@
 You are given a 1-indexed array of integers numbers that is sorted in non-decreasing order. 
 Your task is to find two numbers in the array such that they add up to a given target.
 Let these two numbers be numbers[index_1] and numbers[index_2] where 1 <= index_1 < index_2 <= numbers.length.
+
 Return the indices of the two numbers as an array [index_1, index_2]. The indices should be 1-based.
 
 Examples:

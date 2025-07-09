@@ -1,13 +1,11 @@
 '''
-Given an array of integers numbers, find the contiguous subarray that has the largest product, and return that product.
-It is guaranteed that the result will fit within a 32-bit signed integer.
+Given an array of integers numbers, find the contiguous subarray that has the largest product, and return that product. It is guaranteed that the result will fit within a 32-bit signed integer.
 
 Example:
 Input: numbers = [2, 3, -2, 4]
 Output: 6
 
-Дан массив целых чисел numbers. Найдите подмассив с непрерывными элементами, у которого максимальное произведение, и верните это произведение.
-Гарантируется, что результат поместится в 32-битное целое число со знаком.
+Дан массив целых чисел numbers. Найдите подмассив с непрерывными элементами, у которого максимальное произведение, и верните это произведение. Гарантируется, что результат поместится в 32-битное целое число со знаком.
 
 Пример:
 Ввод: numbers = [2, 3, -2, 4]

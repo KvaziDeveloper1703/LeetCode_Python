@@ -1,18 +1,18 @@
 '''
 You are given a reference to a node in a connected undirected graph:
 class Node:
-    val: int
+    value: int
     neighbors: List[Node]
 
-Return a deep copy of the graph starting from that node (val = 1).
+Return a deep copy of the graph starting from that node (value = 1).
 The graph may have cycles and is represented as an adjacency list.
 
 Дан указатель на узел связного неориентированного графа. Каждый узел содержит:
 class Node:
-    val: int
+    value: int
     neighbors: List[Node]
 
-Нужно создать и вернуть глубокую копию графа, начиная с этого узла (val = 1).
+Нужно создать и вернуть глубокую копию графа, начиная с этого узла (value = 1).
 Граф представлен списком смежности, узлы могут образовывать циклы.
 '''
 
@@ -23,23 +23,22 @@ class Node:
         self.value = value
         self.neighbors = neighbors if neighbors is not None else []
 
-class Solution:
-    def clone_graph(self, node: 'Node') -> 'Node':
-        if not node:
-            return None
+def clone_graph(node: 'Node') -> 'Node':
+    if not node:
+        return None
 
-        cloned_nodes: Dict[int, Node] = {}
+    cloned_nodes: Dict[int, Node] = {}
 
-        def dfs(current_node: 'Node') -> 'Node':
-            if current_node.value in cloned_nodes:
-                return cloned_nodes[current_node.value]
+    def dfs(current_node: 'Node') -> 'Node':
+        if current_node.value in cloned_nodes:
+            return cloned_nodes[current_node.value]
 
-            copy = Node(current_node.value)
-            cloned_nodes[current_node.value] = copy
+        copy = Node(current_node.value)
+        cloned_nodes[current_node.value] = copy
 
-            for neighbor in current_node.neighbors:
-                copy.neighbors.append(dfs(neighbor))
+        for neighbor in current_node.neighbors:
+            copy.neighbors.append(dfs(neighbor))
 
-            return copy
+        return copy
 
-        return dfs(node)
+    return dfs(node)

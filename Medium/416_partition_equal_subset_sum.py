@@ -1,29 +1,28 @@
 '''
-Given an integer array numbers, return true if you can partition the array into two subsets such that the sum of elements in both subsets is equal, or false otherwise.
+Given an integer array numbers, return True if you can partition the array into two subsets such that the sum of elements in both subsets is equal, or False otherwise.
 
 Examples:
 Input: numbers = [1, 5, 11, 5]
-Output: true
+Output: True
 
 Input: numbers = [1, 2, 3, 5]
-Output: false
+Output: False
 
-Дан массив целых чисел numbers.
-Верните true, если массив можно разбить на два подмножества с равной суммой элементов.
-Иначе — false.
+Дан массив целых чисел numbers. Верните True, если массив можно разбить на два подмножества с равной суммой элементов. Иначе — False.
 
 Примеры:
-Вход: numbers = [1, 5, 11, 5]
-Выход: true
+Ввод: numbers = [1, 5, 11, 5]
+Вывод: True
 
-Вход: numbers = [1, 2, 3, 5]
-Выход: false
+Ввод: numbers = [1, 2, 3, 5]
+Вывод: False
 '''
 
 from typing import List
 
 def can_partition(numbers: List[int]) -> bool:
     total_sum = sum(numbers)
+
     if total_sum % 2 != 0:
         return False
 

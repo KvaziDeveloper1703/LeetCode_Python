@@ -1,53 +1,50 @@
 '''
 A gene string is a string of length 8 using the characters 'A', 'C', 'G', 'T'.
 You're given:
-+ start_gene: the initial gene string;
-+ end_gene: the target gene string;
-+ bank: a list of valid gene strings.
+    + start_gene: the initial gene string;
+    + end_gene: the target gene string;
+    + bank: a list of valid gene strings.
 
 Each mutation must:
-+ Change exactly one character;
-+ Result in a string present in bank.
+    + Change exactly one character;
+    + Result in a string present in bank.
 
-Return the minimum number of mutations needed to mutate from start_gene to end_gene.
-If no mutation is possible, return -1.
+Return the minimum number of mutations needed to mutate from start_gene to end_gene. If no mutation is possible, return -1.
 
 Example:
-Input:
-start_gene = "AACCGGTT"
-end_gene = "AACCGGTA"
-bank = ["AACCGGTA"]
+Input: start_gene = "AACCGGTT", end_gene = "AACCGGTA", bank = ["AACCGGTA"]
+Output: 1
 
-Output:
-1
+Генетическая строка — это строка длиной 8, состоящая из символов 'A', 'C', 'G', 'T'.
+Тебе дано:
+    + start_gene: начальная генетическая строка;
+    + end_gene: целевая (конечная) генетическая строка;
+    + bank: список допустимых генетических строк.
 
-Ген представлен строкой длиной 8 символов, состоящей из букв 'A', 'C', 'G', 'T'.
-Ты должен найти минимальное количество мутаций, чтобы превратить строку start_gene в строку end_gene.
-+ Одна мутация — это изменение одного символа в строке;
-+ Все промежуточные строки должны быть в списке bank.
+Каждая мутация должна:
+    + Изменять ровно один символ;
+    + Приводить к строке, которая присутствует в bank.
 
-Если преобразовать невозможно — верни -1.
+Необходимо вернуть минимальное количество мутаций, требуемых для преобразования start_gene в end_gene. Если такое преобразование невозможно, верни -1.
 
 Пример:
-Ввод:
-start_gene = "AACCGGTT"
-end_gene = "AACCGGTA"
-bank = ["AACCGGTA"]
-
-Вывод:
-1
+Ввод: start_gene = "AACCGGTT", end_gene = "AACCGGTA", bank = ["AACCGGTA"]
+Вывод: 1
 '''
 
 from typing import List
 from collections import deque
 
-def min_mutation(start_gene: str, end_gene: str, bank: List[str]) -> int:
+def minimum_mutation(start_gene: str, end_gene: str, bank: List[str]) -> int:
     valid_genes = set(bank)
+
     if end_gene not in valid_genes:
         return -1
+
     gene_options = ['A', 'C', 'G', 'T']
     visited = set()
     bfs_queue = deque([(start_gene, 0)])
+
     while bfs_queue:
         current_gene, mutation_count = bfs_queue.popleft()
         if current_gene == end_gene:

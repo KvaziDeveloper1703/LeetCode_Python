@@ -1,24 +1,24 @@
 '''
-Your task is to calculate 𝑎**𝑏 mod 1337, where:
-    + a is a positive integer;
-    + b is a very large positive integer, represented as an array of digits.
+Your task is to calculate base**exponent_digits mod 1337, where:
+    + base is a positive integer;
+    + exponent_digits is a very large positive integer, represented as an array of digits.
 
 Examples:
-Input: a = 2, b = [3]
+Input: base = 2, exponent_digits = [3]
 Output: 8
 
-Input: a = 2, b = [1, 0]
+Input: base = 2, exponent_digits = [1, 0]
 Output: 1024
 
-Ваша задача — вычислить 𝑎**𝑏 mod 1337, где:
-    + a — положительное целое число;
-    + b — очень большое положительное число, заданное в виде массива цифр.
+Ваша задача — вычислить base**exponent_digits mod 1337, где:
+    + base — положительное целое число;
+    + exponent_digits — очень большое положительное число, заданное в виде массива цифр.
 
 Примеры:
-Ввод: a = 2, b = [3]
+Ввод: base = 2, exponent_digits = [3]
 Вывод: 8
 
-Ввод: a = 2, b = [1, 0]
+Ввод: base = 2, exponent_digits = [1, 0]
 Вывод: 1024
 '''
 

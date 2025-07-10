@@ -1,5 +1,6 @@
 '''
 An ugly number is a positive integer whose prime factors are limited to 2, 3, and 5.
+
 Given an integer n, return the n-th ugly number.
 
 Examples:
@@ -10,17 +11,18 @@ Input: n = 1
 Output: 1
 
 "Уродливое число" — это положительное целое число, простые делители которого ограничены только числами 2, 3 и 5.
+
 Дано целое число n. Верните n-е по счёту уродливое число.
 
 Примеры:
-Вход: n = 10
-Выход: 12
+Ввод: n = 10
+Вывод: 12
 
-Вход: n = 1
-Выход: 1
+Ввод: n = 1
+Вывод: 1
 '''
 
-def nth_ugly_number(self, n: int) -> int:
+def nth_ugly_number(n: int) -> int:
     ugly = [1]
     i2 = i3 = i5 = 0
 

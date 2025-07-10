@@ -26,21 +26,20 @@ Output: [1, 2]
 Вывод: [1, 2]
 '''
 
-class Solution:
-    def lexicalOrder(self, n: int) -> list[int]:
-        result = []
+def lexical_order(n: int) -> list[int]:
+    result = []
 
-        def dfs(current: int):
-            if current > n:
+    def dfs(current: int):
+        if current > n:
+            return
+        result.append(current)
+        for i in range(10):
+            next_number = current * 10 + i
+            if next_number > n:
                 return
-            result.append(current)
-            for i in range(10):
-                next_number = current * 10 + i
-                if next_number > n:
-                    return
-                dfs(next_number)
+            dfs(next_number)
 
-        for i in range(1, 10):
-            dfs(i)
+    for i in range(1, 10):
+        dfs(i)
 
-        return result
+    return result

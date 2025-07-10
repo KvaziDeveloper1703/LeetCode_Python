@@ -1,19 +1,13 @@
 '''
-You are given a string S that represents the serialization of a nested list. Implement a parser to deserialize it and return the corresponding NestedInteger object.
-
-Each element is either:
-    + a single integer, or
-    + a list, whose elements can themselves be integers or other nested lists.
+Given a string S that represents the serialization of a nested list. Implement a parser to deserialize it and return the corresponding NestedInteger object.
+Each element is either a single integer, or a list, whose elements can themselves be integers or other nested lists.
 
 Example:
 Input: S = "324"
 Output: 324
 
-Вам дана строка S, представляющая сериализованный вложенный список. Реализуйте парсер, который десериализует эту строку и возвращает объект NestedInteger.
-
-Каждый элемент может быть:
-    + либо целым числом,
-    + либо списком, элементы которого также могут быть числами или другими вложенными списками.
+Дана строка S, представляющая сериализованный вложенный список. Реализуйте парсер, который десериализует эту строку и возвращает объект NestedInteger.
+Каждый элемент может быть либо целым числом, либо списком, элементы которого также могут быть числами или другими вложенными списками.
 
 Пример:
 Ввод: S = "324"

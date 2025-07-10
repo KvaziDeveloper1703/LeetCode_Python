@@ -1,10 +1,7 @@
-"""
-We define the string base as the infinite wraparound string of "abcdefghijklmnopqrstuvwxyz".
-That is, it looks like this: "...zabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcd..."
+""" 
+We define the string base as the infinite wraparound string of "abcdefghijklmnopqrstuvwxyz". That is, it looks like this: "...zabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcd..."
 
-Given a string S, return the number of unique non-empty substrings of S that are present in the base string.
-
-A substring is considered present in base if it consists of consecutive characters in the alphabet, and it can wrap around from 'z' to 'a'.
+Given a string S, return the number of unique non-empty substrings of S that are present in the base string. A substring is considered present in base if it consists of consecutive characters in the alphabet, and it can wrap around from 'z' to 'a'.
 
 Examples:
 Input: S = "a"
@@ -13,11 +10,9 @@ Output: 1
 Input: S = "cac"
 Output: 2
 
-Определим строку base как бесконечную циклическую строку "abcdefghijklmnopqrstuvwxyz".
-Она выглядит примерно так: "...zabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcd..."
+Определим строку base как бесконечную циклическую строку "abcdefghijklmnopqrstuvwxyz". Она выглядит примерно так: "...zabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcd..."
 
-Дана строка S. Необходимо вернуть количество уникальных непустых подстрок строки S, которые содержатся в строке base.
-Подстрока считается допустимой, если её символы следуют в алфавитном порядке подряд, с возможностью перехода от 'z' к 'a'.
+Дана строка S. Необходимо вернуть количество уникальных непустых подстрок строки S, которые содержатся в строке base. Подстрока считается допустимой, если её символы следуют в алфавитном порядке подряд, с возможностью перехода от 'z' к 'a'.
 
 Примеры:
 Ввод: S = "a"

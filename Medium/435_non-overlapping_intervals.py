@@ -1,6 +1,7 @@
 '''
-Given an array of intervals intervals, where intervals[i] = [startᵢ, endᵢ], return the minimum number of intervals you need to remove so that the remaining intervals are non-overlapping.
-Note: Intervals that only touch at a point are non-overlapping.
+Given an array of intervals intervals, where intervals[i] = [startᵢ, endᵢ].
+
+Return the minimum number of intervals you need to remove so that the remaining intervals are non-overlapping.
 
 Examples:
 Input: intervals = [[1,2],[2,3],[3,4],[1,3]]
@@ -9,8 +10,9 @@ Output: 1
 Input: intervals = [[1,2],[1,2],[1,2]]
 Output: 2
 
-Дан массив интервалов intervals, где intervals[i] = [startᵢ, endᵢ]. Верните минимальное количество интервалов, которые нужно удалить, чтобы оставшиеся интервалы не пересекались.
-Примечание: Интервалы, которые касаются только в одной точке, считаются непересекающимися.
+Дан массив интервалов intervals, где intervals[i] = [startᵢ, endᵢ]. 
+
+Верните минимальное количество интервалов, которые нужно удалить, чтобы оставшиеся интервалы не пересекались.
 
 Примеры:
 Ввод: intervals = [[1,2],[2,3],[3,4],[1,3]]

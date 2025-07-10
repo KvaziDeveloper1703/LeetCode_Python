@@ -1,7 +1,7 @@
 '''
-You are given an integer array numbers. Design a class Solution to:
+Given an integer array numbers. Design a class Solution to:
     + Solution(int[] numbers): Initialize the object with the integer array numbers;
-    + int[] reset(): Reset the array to its original configuration and return it.
+    + int[] reset(): Reset the array to its original configuration and return it;
     + int[] shuffle(): Return a random shuffling of the array. All permutations must be equally likely.
 
 Example:
@@ -22,7 +22,6 @@ import random
 from typing import List
 
 class Solution:
-
     def __init__(self, numbers: List[int]):
         self.original = numbers[:]
         self.array = numbers[:]

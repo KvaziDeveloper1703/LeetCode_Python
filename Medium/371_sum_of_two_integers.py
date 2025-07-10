@@ -1,5 +1,5 @@
 '''
-Given two integers a and b, return the sum of the two integers without using the + and - operators.
+Given two integers a and b. Return the sum of the two integers without using the + and - operators.
 
 Examples:
 Input: a = 1, b = 2
@@ -18,7 +18,7 @@ Output: 5
 Вывод: 5
 '''
 
-def getSum(a: int, b: int) -> int:
+def get_sum(a: int, b: int) -> int:
     MASK = 0xFFFFFFFF
     MAX_INT = 0x7FFFFFFF
 

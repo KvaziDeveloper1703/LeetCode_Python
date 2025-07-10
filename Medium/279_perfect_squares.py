@@ -2,7 +2,6 @@
 Given an integer n, return the least number of perfect square numbers that sum up to n.
 
 A perfect square is an integer that is the square of another integer — in other words, it is the product of an integer with itself.
-Examples of perfect squares: 1, 4, 9, 16; but 3 and 11 are not perfect squares.
 
 Examples:
 Input: n = 12
@@ -11,10 +10,9 @@ Output: 3
 Input: n = 13
 Output: 2
 
-Дано целое число n. Требуется вернуть минимальное количество полных квадратов, сумма которых равна n.
+Дано целое число n. Нужно вернуть минимальное количество полных квадратов, сумма которых равна n.
 
 Полный квадрат — это целое число, которое является квадратом другого целого числа.
-Примеры полных квадратов: 1, 4, 9, 16 (так как 1², 2², 3², 4²), а вот 3 и 11 — не полные квадраты.
 
 Примеры:
 Ввод: n = 12
@@ -24,7 +22,7 @@ Output: 2
 Вывод: 2
 '''
 
-def number_of_squares(self, n: int) -> int:
+def number_of_squares(n: int) -> int:
     min_number_of_squares = [float('inf')] * (n + 1)
     min_number_of_squares[0] = 0
 

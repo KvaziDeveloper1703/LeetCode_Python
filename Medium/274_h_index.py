@@ -1,5 +1,6 @@
 '''
-You are given an array of integers citations, where citations[i] represents the number of citations a researcher received for their i‑th paper.
+Given an array of integers citations, where citations[i] represents the number of citations a researcher received for their i‑th paper.
+
 Return the h-index, which is defined as the maximum number h such that the researcher has at least h papers with at least h citations each.
 
 Examples:
@@ -10,6 +11,7 @@ Input: citations = [1, 3, 1]
 Output: 1
 
 Дан массив целых чисел citations, где citations[i] — это количество цитирований, полученных исследователем за его i-ю статью.
+
 Необходимо вернуть h-индекс — максимальное число h такое, что у исследователя есть как минимум h статей, каждая из которых была процитирована не менее чем h раз.
 
 Примеры:

@@ -20,9 +20,8 @@ Output: [0,1,1,2,1,2]
 
 from typing import List
 
-class Solution:
-    def count_bits(self, n: int) -> List[int]:
-        bit_counts = [0] * (n + 1)
-        for i in range(1, n + 1):
-            bit_counts[i] = bit_counts[i >> 1] + (i & 1)
-        return bit_counts
+def count_bits(n: int) -> List[int]:
+    bit_counts = [0] * (n + 1)
+    for i in range(1, n + 1):
+        bit_counts[i] = bit_counts[i >> 1] + (i & 1)
+    return bit_counts

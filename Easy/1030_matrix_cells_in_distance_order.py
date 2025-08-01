@@ -41,5 +41,4 @@ def all_cells_distance_order(rows: int, columns: int, rCenter: int, cCenter: int
             cells.append((distance, [r, c]))
 
     cells.sort(key=lambda x: x[0])
-
     return [coord for _, coord in cells]

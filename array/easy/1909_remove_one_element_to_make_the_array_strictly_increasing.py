@@ -25,17 +25,15 @@ Output: False
 from typing import List
 
 def can_be_increasing(numbers: List[int]) -> bool:
-    n = len(numbers)
-    removed = False
+    dropped = 0
 
-    for i in range(1, n):
+    for i in range(1, len(numbers)):
         if numbers[i] <= numbers[i - 1]:
-            if removed:
+            dropped += 1
+            if dropped > 1:
                 return False
-            removed = True
 
-            if i == 1 or numbers[i] > numbers[i - 2]:
-                continue
-
-            numbers[i - 1] = numbers[i]
+            if i > 1 and numbers[i] <= numbers[i - 2]:
+                if i + 1 < len(numbers) and numbers[i + 1] <= numbers[i - 1]:
+                    return False
     return True

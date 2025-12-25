@@ -42,7 +42,9 @@ def distribute_money(money: int, children: int) -> int:
     money -= count * 7
     children -= count
 
-    if children > 0 and money == 3:
+    if children == 0 and money > 0:
+        count -= 1
+    elif children == 1 and money == 3:
         count -= 1
 
     return count

@@ -33,7 +33,14 @@ Output: false
 '''
 
 def can_alice_win(n: int) -> bool:
-    if n < 10:
-        return False
-    else:
-        return True
+    stones_left = n
+    stones_to_remove = 10
+    is_alice_turn = True
+
+    while True:
+        if stones_to_remove == 0 or stones_left < stones_to_remove:
+            return not is_alice_turn
+
+        stones_left -= stones_to_remove
+        stones_to_remove -= 1
+        is_alice_turn = not is_alice_turn
